@@ -278,7 +278,7 @@
 
       <nav class="artifacts">
          <p style="font-size: 15px; color:rgb(155, 154, 154);line-height: 0%; padding-bottom: 4px;">Generated using the <a style="color:rgb(100, 100, 100);"  href='#' target="_blank";">research-compendium-template</a></p>
-         <a href="https://github.com/$github-repo$" title="Github repo" target="_blank"><img src="https://img.shields.io/badge/write-github-blue.svg" /></a>
+         <a href="https://github.com/$github-user$/$github-repo$" title="Github repo" target="_blank"><img src="https://img.shields.io/badge/write-github-blue.svg" /></a>
          <a href="manuscript.pdf" title="Github repo" target="_blank"><img src="https://img.shields.io/badge/read-pdf-green.svg" /></a>
          <a href="manuscript.docx" title="Github repo" target="_blank"><img src="https://img.shields.io/badge/read-docx-yellow.svg" /></a>
          $if(zenodoDOI)$
@@ -300,7 +300,7 @@
                   <p>Supporting information</p>
                </div>
                <div class="rightColumn">
-                  <p>Additional supporting information can be found $for(supporting-files)$<a href="https://willvieira.github.io/ms_STM-managed/$supporting-files$.html">here</a>$sep$, $endfor$.</p>
+                  <p>Additional supporting information can be found $for(supporting-files)$<a href="https://$github-user$.github.io/$github-repo$/$supporting-files$.html">here</a>$sep$, $endfor$.</p>
                </div>
             </div>
             $endif$
@@ -368,8 +368,8 @@
       
       </div>
       <div class="footer">
-         <p><a onMouseOver="this.style.color='#00667F'"onMouseOut="this.style.color='grey'" style='color:grey' href="https://github.com/$github-repo$/issues" target="_blank"><i class="fas fa-exclamation-circle"></i> Report issues</a></p>
-         <p><a onMouseOver="this.style.color='#00667F'"onMouseOut="this.style.color='grey'" style='color:grey' href="https://twitter.com/intent/tweet?text=$title$%20https://github.com/$github-repo$"" target="_blank"><i class="fab fa-twitter"></i> Tweet this page</a></p>
+         <p><a onMouseOver="this.style.color='#00667F'"onMouseOut="this.style.color='grey'" style='color:grey' href="https://github.com/$github-user$/$github-repo$/issues" target="_blank"><i class="fas fa-exclamation-circle"></i> Report issues</a></p>
+         <p><a onMouseOver="this.style.color='#00667F'"onMouseOut="this.style.color='grey'" style='color:grey' href="https://twitter.com/intent/tweet?text=$title$%20https://github.com/$github-user$/$github-repo$"" target="_blank"><i class="fab fa-twitter"></i> Tweet this page</a></p>
          <p><a onMouseOver="this.style.color='#00667F'"onMouseOut="this.style.color='grey'" style='color:grey' href="javascript:void(0)" onclick="openAnnotate()"><i class="fas fa-comments"></i> Leave a comment</a></p>
       </div>
 
