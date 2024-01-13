@@ -1,5 +1,9 @@
 ## Supplementary Material 1
 
+### Figure S1
+
+![Difference in suitable probability between the center and border of the distribution (left panels) and no competition and heterospecific competition (right) for the cold (top) and hot (bottom) ranges. The color of the line connecting each species' conditions represents the intensity of change in suitable probability—the more intense the color, the greater the shift between conditions.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_raw-1.png){#fig:sm1}
+
 ### Table 1
 
 \begin{longtable}{lrrr}
