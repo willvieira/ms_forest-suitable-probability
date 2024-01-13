@@ -63,7 +63,7 @@
   citations <- stripCitekeys(infile)
 
   # Remove known bug keys
-  toRemove <- c('fig', 'ref')
+  toRemove <- c('fig', 'eq', 'ref')
   citations <- citations[!citations %in% toRemove]
 
 #
