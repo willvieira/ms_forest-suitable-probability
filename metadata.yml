@@ -10,8 +10,7 @@ keywords:
 highlights:
     - "Cool but useless"
 supporting-files:
-  - "suppInfo1"
-  - "suppInfo2"
+  - "suppInfo"
 language: "en"
 license: "CC-BY"
 github-repo: "willvieira/ms_forest-suitable-probability"
