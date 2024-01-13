@@ -25,7 +25,7 @@
 
   #args <- commandArgs(trailingOnly = TRUE)
   #infile <- args[1]
-  infile <- 'manuscript/manuscript.md'
+  infile <- list.files('manuscript', pattern = '.md', full.names = TRUE)
 
   # Local bib file (specific to project)
   localBibFile <- 'manuscript/references.bib'
@@ -60,7 +60,7 @@
     return(unique(citations))
   }
 
-  citations <- stripCitekeys(infile)
+  citations <- sapply(infile, \(x) stripCitekeys(x)) |> unlist() |> unname()
 
   # Remove known bug keys
   toRemove <- c('fig', 'eq', 'ref')
