@@ -38,7 +38,7 @@ Specifically, we introduce a novel metric called **suitable probability**, deriv
 This metric determines the probability of a positive population growth rate for a species under specific climate and competition conditions.
 
 Within this new framework, we investigate how a species' suitable probability changes from the center of its distribution toward the cold and hot borders.
-We specifically disentangle the relative impacts of climate and competition on changing suitable probability across the species' range distribution.
+We specifically disentangle the relative impacts of climate and competition on changing suitable probability from the center to the borders.
 Given that the cold and hot range limits of each species are relative to their distribution across North America, we further examine whether the effect of climate and competition on suitable probability depends on the biogeographic position of the species.
 We conclude by discussing a novel theory that uses suitable probability to establish a link between individual demographic rates and metapopulation dynamics.
 
@@ -81,7 +81,7 @@ Finally, the intercept of each growth, survival, and recruitment model incorpora
 
 We use two open inventory datasets from eastern North America: the Forest Inventory and Analysis (FIA) dataset in the United States [@OConnell2007] and the Forest Inventory of Québec [@Naturelles2016].
 These inventories, with multiple dbh measurements over time and space, allow us to use the transition information between measurement years for predicting growth, survival, and recruitment rates.
-We selected the 31 most abundant species, comprising 9 conifer species and 21 hardwood species, well-dispersed across shade tolerance and succession traits (Supplementary Table 1 TODO).
+We selected the 31 most abundant species, comprising 9 conifer species and 21 hardwood species, well-dispersed across shade tolerance and succession traits (Supplementary Material 1).
 Furthermore, these species are well distributed across the eastern North American gradient.
 A detailed description of the data and model development is available in Chapter 2.
 
@@ -168,7 +168,7 @@ To reduce the sampling time, we used a sample of 5000 plots for each species to 
 This sample was necessary only for 6 out of the 31 species.
 The R and Stan scripts for these computations on High-performance computing are accessible on GitHub: [https://github.com/willvieira/forest-IPM/tree/master/simulations/model_lambdaPlot/](https://github.com/willvieira/forest-IPM/tree/master/simulations/model_lambdaPlot/).
 
-With the fitted models, we leveraged the posterior distribution to estimate the suitable probability of a species for any value of MAT under fundamental or realized niche for the cold and hot ranges.
+With the fitted models, we leveraged the posterior distribution to estimate the suitable probability of a species for any value of MAT under fundamental or realized niches for the cold and hot ranges.
 Specifically, we estimated suitable probability under four different MAT conditions encountered by the species: at the border and the center of each cold and hot range.
 We defined the border of the cold range as the minimum observed MAT for the focal species in the dataset, while the hot range was defined as the maximum observed MAT.
 The center location is defined as the centroid of MAT for the focal species.
@@ -181,14 +181,14 @@ Finally, we estimated suitable probability for each location under no competitio
 ### Model fit
 
 We used a linear model to summarize the evolution of the population growth rate ($\lambda$) and its variability across the cold and hot ranges (Equation @eq:metamodel).
-The Figure @fig:res_example shows the observed $\lambda$ distribution of $\lambda$ and the fit of the underlying model on the mean annual temperature gradient for the species *Abies balsamea*.
+Figure @fig:res_example shows the observed $\lambda$ distribution of $\lambda$ and the fit of the underlying model on the mean annual temperature gradient for the species *Abies balsamea*.
 Each point represents a plot-year-replication encompassing the complete spatio-temporal sources of variability arising from the stochastic environment and parameter uncertainty.
 The black line represents the average fitted model (how $\lambda$ changes with MAT), and the shaded area is the 90th quantile of model uncertainty (how the variability of $\lambda$ changes with MAT).
 From this uncertainty, we can deduce the suitable probability.
 In this example, in the cold range, the mean and variance of $\lambda$ decrease towards the cold boundary.
 By comparing the model under heterospecific competition with that without competition, we can observe a slight decrease in the average at the cold border but a larger decrease in uncertainty (Figure @fig:res_example, bottom left).
 
-![Distribution of stochastic population growth rate ($\lambda$) for *Abies balsamea* over the mean annual temperature gradient for cold (left panels) and warm (right panels) ranges under no competition (fundamental niche) and heterospecific competition (realized niche). The dots represent $\lambda$ over the plot-year-replication combinations. The model's average line and 90% prediction intervals are estimated using 500 draws from the posterior distribution.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-res_example-1.png){#fig:res_example width=100%}
+![Distribution of stochastic population growth rate ($\lambda$) for *Abies balsamea* over the mean annual temperature gradient for cold (left panels) and hot (right panels) ranges under no competition (fundamental niche) and heterospecific competition (realized niche). The dots represent $\lambda$ over the plot-year-replication combinations. The model's average line and 90% prediction intervals are estimated using 500 draws from the posterior distribution.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-res_example-1.png){#fig:res_example width=100%}
 
 We can estimate the suitable probability using the empirical cumulative distribution approach (Equation @eq:sp) from the linear model predictions.
 The Figure @fig:sp-example shows the suitable probability expected over the mean annual temperature of the same species.
@@ -196,12 +196,12 @@ As expected, the suitable probability was reduced toward the cold border and was
 We can also observe that the decrease in suitable probability toward the border is nonlinear, becoming more substantial for heterospecific competition than for the no-competition condition.
 The model fit and the estimation of suitable probability across the temperature gradient for all species are presented in Supplementary Material 2.
 
-![Suitable probability of *Abies balsamea* over the mean annual temperature gradient for cold and warm ranges under no competition (green) and heterospecific (yellow). The vertical dotted line represents the range limits of the MAT observed in the dataset.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-sp-example-1.png){#fig:sp-example width=100%}
+![Suitable probability of *Abies balsamea* over the mean annual temperature gradient for cold and hot ranges under no competition (green) and heterospecific (yellow). The vertical dotted line represents the range limits of the MAT observed in the dataset.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-sp-example-1.png){#fig:sp-example width=100%}
 
 ### Effect of climate and competition on suitable probability
 
 We analyzed the effect of competition on the suitable probability at the border and center of the temperature range distribution for all species.
-The Figure @fig:sp_comp_vs_nocomp2 compares the suitable probability under no competition to those under heterospecific competition for four locations from the mean annual temperature gradient.
+Figure @fig:sp_comp_vs_nocomp2 compares the suitable probability under no competition to those under heterospecific competition for four locations from the mean annual temperature gradient.
 Overall, suitable probability was high among the species, with an average of 0.78.
 Among the four locations, species presented a lower suitable probability at the border of the hot range, with an average of 0.67.
 Almost all species, in all conditions, are distributed below the identity line (1:1), meaning that heterospecific competition reduces the suitable probability.
@@ -236,13 +236,11 @@ Conversely, the suitable probability increased when species were situated in hot
 
 # Discussion
 
-- Resume our main questions here. Overall, our findings revealed that the relative difference in suitable probability from the center toward the border was predominantly influenced by climate rather than competition.
-- Although suitable probability was kept right across the cold and hot border of the species; we found that competition was 
-- There is a big simplification in using only the mean annual temperature gradient to infer range limits. But this is just the first iteration to show the potential of this approach, which can be further expanded. For instance, I can add the longitudinal gradient as an extra covariate of the linear model. Furthermore, we could use the Gaussian process to estimate the 2-dimensional kernels in the space.
-- We assumed the competitive community abundance was at equilibrium (assumption of the coexistence theory for the invasion growth rate). It is hard to verify whether the observed community was at equilibrium. However, the IPM allows us to compute the species or community equilibrium over large runs of the model. Therefore, we propose an extension of this work to include the dimension of equilibrium estimated from the IPM into the metrics of invasion growth rate.
-- range size could influence our analysis. We then corrected the relative difference by the size of the range but did not find a significant difference in the interpretation of the results.
-- Further sources of variability are yet to be included. Particularly, incrementing the spatial plot-level uncertainty with temporal variability can further extract information. 
-- Furthermore, we ignored autocorrelation in the environment stochasticity. This is likely to be not true (example).
-- Also, there is further room for improvement if we account for the possible interaction between temporal and spatial variability.
+Understanding the mechanisms driving species distribution is imperative in the face of ongoing and future global change.
+We acknowledged and integrated various sources of variability in the population growth rate of forest trees, contributing to an improved understanding of forest dynamics in an uncertain world.
+Introducing a novel metric, we quantified the relative impacts of climate and competition on the change in suitable probability across species distributions.
+Our findings revealed a nearly linear reduction in suitable probability from the cold to hot borders.
+Notably, the predominant influence on the relative difference in suitable probability from the center toward the border was attributed to climate rather than competition.
+These results, supported by a novel approach accounting for uncertainty, enhance our undertandind of the nuanced interplay between climate and competition across species ranges.
 
 # References
