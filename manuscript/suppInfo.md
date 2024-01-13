@@ -4,6 +4,11 @@
 
 ![Difference in suitable probability between the center and border of the distribution (left panels) and no competition and heterospecific competition (right) for the cold (top) and hot (bottom) ranges. The color of the line connecting each species' conditions represents the intensity of change in suitable probability—the more intense the color, the greater the shift between conditions.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_raw-1.png){#fig:sm1}
 
+### Figure S1
+
+![The relationship in the difference in suitable probability from the center to the border ($\Delta\Lambda$) between the cold and hot borders. A species at the bottom-left area (both $\Delta\Lambda$ are negative) indicates an unimodal decrease in suitable probability at the borders. Conversely, species at the top-right square exhibit an inverse unimodal shape.  In the top-left or bottom-right areas, suitable probability linearly decreases or increases from the cold toward the hot border, respectively. For the climate effect (left panel), species are colored following the centroid mean annual temperature among all observed plots. In the climate effect (left panel), species are color-coded based on the centroid of mean annual temperature among all observed plots. In the competition effect (right panel), species are classified by shade tolerance following @burns1990silvics.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_hot_vs_cold-1.png){#fig:sm1}
+
+
 ### Table 1
 
 \begin{longtable}{lrrr}

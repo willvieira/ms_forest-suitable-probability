@@ -222,6 +222,11 @@ Overall, the relative difference in suitable probability from the center toward 
 
 ![Difference in suitable probability for climate and competition effects over the cold and hot ranges. Negative values denote a decrease in species suitable probability from the center towards the distribution border, while positive values indicate an increase. Specifically, a negative value for climate at the hot (or cold) range signifies a reduction in suitable probability as temperature rises (or falls) towards the border.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_hist-1.png){#fig:diff_sp_hist width=100%}
 
+In our investigation of whether suitable probability decreases simultaneously at both borders (indicating a unimodal shape) or exhibits a linear pattern from one border to the other (Figure S2), we found distinct patterns under the climate and competition effects.
+For the climate effect, the majority of species demonstrated a decrease in suitable probability at one border while the other remained unchanged.
+Additionally, a few species displayed a clear linear pattern of decreasing suitable probability from the cold to the hot border, with only one species (*Betula papyrifera*) showing a pronounced unimodal shape.
+Conversely, under the competition effect, most species exhibited a decrease in suitable probability at the hot border and an increase at the cold border, indicating a linear rise in the impact of competition from the cold to the hot border of the distribution.
+
 ### Suitable probability across the mean annual temperature gradient
 
 We further investigated the potential dependency of climate and competition effects on the geographical location of the species.
