@@ -8,7 +8,7 @@ keywords:
     - "Environmental stochasticity"
     - "Forest demography"
 highlights:
-    - "Cool but useless"
+    - ""
 supporting-files:
   - "suppInfo"
 language: "en"
@@ -42,7 +42,7 @@ affiliations:
       name: Département de biologie, Université de Sherbrooke, Sherbrooke, Québec, Canada
 
 acknowledgments: "We thank nice people"
-data_availability: "All the code and data used to reproduce the analysis, figure and manuscript are stored as a research compendium at [URL]())."
+data_availability: "All the code and data used to reproduce the analysis, figure and manuscript are stored as a research compendium at [https://github.com/willvieira/ms_forest-suitable-probability](https://github.com/willvieira/ms_forest-suitable-probability))."
 funding: "This research was supported by the BIOS² NSERC CREATE program."
 authorship: ""
 conflicts-of-interest: "The authors declare no conflict of interest."
