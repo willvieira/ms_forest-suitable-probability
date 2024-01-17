@@ -12,9 +12,9 @@ Formally, this framework evaluates the intrinsic population growth rate when the
 Numerous studies have explored the influence of climate and competition on the distribution of forest trees across their ranges.
 For instance, @Ettinger2017 observed in field experiments that neighboring competition constrained individual performance within the range but facilitated better performance outside the range.
 Using a dynamic forest model, @Scherrer2020a showed how slow demographic rates and negative competition reduce the uphill migration rate of 16 tree species.
-Despite the evidence, the application of this framework to predict the geographic distribution of species based on demographic rates often reveals weak correlations between the performance of tree species and their distribution [@Thuiller2014; @Csergo2017; @LeSquin2021; @Midolo2021].
+Despite the evidence, the application of this framework to predict the geographic distribution of species based on demographic rates often reveals weak correlations between the performance of tree species and their distribution [@Thuiller2014; @Csergo2017; @bohner2020; @LeSquin2021; @Midolo2021; @Guyennon2023].
 
-One possible explanation for such discrepancy between demographic rates and species distribution is that performance is the common practice of assessing performance under average conditions and pointwise estimations, neglecting the associated uncertainty in these estimates.
+One possible explanation for such discrepancy between demographic rates and species distribution is the common practice of assessing performance under average conditions and pointwise estimations, neglecting the associated uncertainty in these estimates.
 Variability in demographic rates and subsequently in population growth rate ($\lambda$) arises from two primary sources [@van2020].
 The first source is attributed to demographic and environmental stochasticity, wherein individuals exposed to identical conditions may exhibit different responses simply by chance [@Caswell2009].
 The second source of variability arises from heterogeneity encountered at various scales.
@@ -22,7 +22,7 @@ These differences can manifest between individual stages that motivated the deve
 A final source of variability in $\lambda$ is the uncertainty associated with the parameters of the demographic models.
 
 Theory predicts that the uncertainty arising from stochastic and heterogenous processes may lead to divergent outcomes in $\lambda$.
-Demographic and environmental stochasticity may increase the uncertainty in $\lambda$, consequently increasing the extinction risk, particularly for populations with low performance or low density [@Holt2005].
+Demographic and environmental stochasticity may increase the uncertainty in $\lambda$, consequently increasing the extinction risk, particularly for populations with low performance or low density [@Holt2005; @Gravel2011].
 Indeed, demographical stochasticity increased the extinction risk of European forest trees at the hot edge of their distribution [@Guyennon2023].
 On the other hand, heterogeneity has been described as a mechanism that can buffer against the stochasticity in demographic rates, thereby increasing population persistence [@milles2023].
 This is particularly relevant in nonlinear models, where Jensen's inequality predicts - for convex response functions - that higher levels of demographic and environmental stochasticity increase the average population growth rate [@Koons2009].
@@ -211,7 +211,13 @@ Across the temperature range, there is a monotonic decrease in suitable probabil
 
 ![Suitable probability for the 31 forest species in their distribution from the cold to the hot border of the mean annual temperature gradient. Note that we omitted the parameter uncertainty of each species in this figure to avoid overlap and increase clarity.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-sp_comp_vs_nocomp2-1.png){#fig:sp_comp_vs_nocomp2 width=100%}
 
-For each species, we estimated the difference in suitable probability between the border and center (for climate) and between heterospecific and non-competition (Figure S1).
+While the negative effect of climate on suitable probability is evident, distinguishing the individual effects of competition remains challenging.
+Hence, we further assessed the impact of competition on reducing suitable probability by subtracting the suitable probability under heterospecific competition from the suitable probability with no competition (Figure S1).
+Even when isolating the effect of climate, the negative impact of heterospecific competition on suitable probability increases toward the border of the hot range.
+
+### Suitable probability change from center to border
+
+For each species, we estimated the difference in suitable probability between the border and center (for climate) and between heterospecific and non-competition (Figure S2).
 We further estimated the relative effect of climate and competition on changing suitable probability from the center to the border of the species distribution (Figure @fig:diff_sp_hist).
 Specifically, we quantified the distinct contributions of temperature and competition to changes in suitable probability.
 Positive values of the relative difference signify an increase in suitable probability from the center towards the border, negative values indicate a decrease, and zero implies no net change.
@@ -222,7 +228,7 @@ Overall, the relative difference in suitable probability from the center toward 
 
 ![Difference in suitable probability for climate and competition effects over the cold and hot ranges. Negative values denote a decrease in species suitable probability from the center towards the distribution border, while positive values indicate an increase. Specifically, a negative value for climate at the hot (or cold) range signifies a reduction in suitable probability as temperature rises (or falls) towards the border.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_hist-1.png){#fig:diff_sp_hist width=100%}
 
-In our investigation of whether suitable probability decreases simultaneously at both borders (indicating a unimodal shape) or exhibits a linear pattern from one border to the other (Figure S2), we found distinct patterns under the climate and competition effects.
+In our investigation of whether suitable probability decreases simultaneously at both borders (indicating a unimodal shape) or exhibits a linear pattern from one border to the other (Figure S3), we found distinct patterns under the climate and competition effects.
 For the climate effect, the majority of species demonstrated a decrease in suitable probability at one border while the other remained unchanged.
 Additionally, a few species displayed a clear linear pattern of decreasing suitable probability from the cold to the hot border, with only one species (*Betula papyrifera*) showing a pronounced unimodal shape.
 Conversely, under the competition effect, most species exhibited a decrease in suitable probability at the hot border and an increase at the cold border, indicating a linear rise in the impact of competition from the cold to the hot border of the distribution.
@@ -237,7 +243,6 @@ Not surprisingly, suitable probability decreased as temperature declined toward 
 Conversely, the suitable probability increased when species were situated in hotter conditions as temperature decreased toward the cold range.
 
 ![Relative difference in suitable probability between the center and border for climate and competition for 31 species located over the mean annual temperature gradient. Species points are grouped by a Multivariate Normal Density function with 75% probability.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-sp_diff_over_MAT-1.png){#fig:sp_diff_over_MAT width=100%}
-
 
 # Discussion
 
