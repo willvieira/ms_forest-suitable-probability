@@ -11,14 +11,14 @@ A recent theoretical framework based on the coexistence theory has been proposed
 Formally, this framework evaluates the intrinsic population growth rate when the focal species is rare [@Chesson2000a], both in scenarios where there is no competition (fundamental niche) and when competitive species reach equilibrium (realized niche).
 Numerous studies have explored the influence of climate and competition on the distribution of forest trees across their ranges.
 For instance, @Ettinger2017 observed in field experiments that neighboring competition constrained individual performance within the range but facilitated better performance outside the range.
-Using a dynamic forest model, @Scherrer2020a showed how slow demographic rates and negative competition reduce the uphill migration rate of 16 tree species.
+Using a dynamic forest model, @Scherrer2020 showed how slow demographic rates and negative competition reduce the uphill migration rate of 16 tree species.
 Despite the evidence, the application of this framework to predict the geographic distribution of species based on demographic rates often reveals weak correlations between the performance of tree species and their distribution [@Thuiller2014; @Csergo2017; @bohner2020; @LeSquin2021; @Midolo2021; @Guyennon2023].
 
 One possible explanation for such discrepancy between demographic rates and species distribution is the common practice of assessing performance under average conditions and pointwise estimations, neglecting the associated uncertainty in these estimates.
 Variability in demographic rates and subsequently in population growth rate ($\lambda$) arises from two primary sources [@van2020].
 The first source is attributed to demographic and environmental stochasticity, wherein individuals exposed to identical conditions may exhibit different responses simply by chance [@Caswell2009].
 The second source of variability arises from heterogeneity encountered at various scales.
-These differences can manifest between individual stages that motivated the development of structured population models [@Lewis1942; @leslie1945], and extend to large-scale differences in neighboring patches, as described by metapopulation theory [@Hanski1999].
+These differences can manifest between individual stages that motivated the development of structured population models [@Lewis1942; @leslie1945], and extend to large-scale differences in neighboring patches, as described by metapopulation theory [@Levins1969].
 A final source of variability in $\lambda$ is the uncertainty associated with the parameters of the demographic models.
 
 Theory predicts that the uncertainty arising from stochastic and heterogenous processes may lead to divergent outcomes in $\lambda$.
@@ -246,11 +246,65 @@ Conversely, the suitable probability increased when species were situated in hot
 
 # Discussion
 
-Understanding the mechanisms driving species distribution is imperative in the face of ongoing and future global change.
+Understanding the mechanisms shaping species distribution is imperative to face ongoing global changes.
 We acknowledged and integrated various sources of variability in the population growth rate of forest trees, contributing to an improved understanding of forest dynamics in an uncertain world.
 Introducing a novel metric, we quantified the relative impacts of climate and competition on the change in suitable probability across species distributions.
 Our findings revealed a nearly linear reduction in suitable probability from the cold to hot borders.
 Notably, the predominant influence on the relative difference in suitable probability from the center toward the border was attributed to climate rather than competition.
-These results, supported by a novel approach accounting for uncertainty, enhance our undertandind of the nuanced interplay between climate and competition across species ranges.
+These results, supported by a novel approach accounting for uncertainty, enhance our understanding of the nuanced interplay between climate and competition across species ranges.
+
+The suitable probability was high across all species and range locations, with only around 5% of all species-location combinations having a suitable probability below the 0.5 threshold.
+This is primarily attributed to most species exhibiting a high positive population growth rate across their current range distribution.
+Additionally, the spatio-temporal variability in the environment and the parameter uncertainty in the plot may contribute to the elevated average population growth rate due to nonlinear averaging.
+This aligns with theoretical [@Schreiber2009] and empirical [@Crone2016] work indicating that spatial heterogeneity leads to a higher population growth rate.
+
+Competition had a significant effect in reducing suitable probability across all range locations, contributing to the ongoing debate surrounding its significance in setting range limits.
+Despite several studies emphasizing the effect of competition compared to climate on the demographic rates of forest trees [@Zhang2015;@Kaber2021;@LeSquin2021], debates persist regarding whether this effect at the local scale translates to the biogeographic distribution of species [@Soberon2007;@CopenhaverParry2017].
+Our findings support the @Godsoe2017 hypothesis and a growing body of evidence [@Scherrer2020;@Shi2020;@Paquette2021;@Lyu2022] showing that the effect of competition on the intrinsic population growth rate can indeed set range limits.
+
+The decline in suitable probability from the cold to the hot border suggests a predominantly linear, rather than unimodal, performance pattern across the temperature range for most species.
+This result is consistent with reduced population growth rates in North American [@schultz2022;@LeSquin2021] and European [@Guyennon2023] forest trees, except for the contrasting pattern observed by @Purves2009.
+The higher suitable probability in the cold range compared to the hot range could be attributed to multiple factors.
+First, species may still follow their climate niche post the last glaciation, explaining why the current cold range limit does not align with the expected niche distribution [@Svenning2007], potentially leading to a colonization debt [@Talluto2017].
+Notably, four of the six species exhibiting a significant decrease in suitable probability from the center toward the cold range were already at the extreme cold observed in the dataset (Figure @fig:sp_diff_over_MAT).
+
+Second, our model might be overlooking crucial drivers of species performance, despite capturing a substantial amount of variation from parameter uncertainty at the plot level.
+Factors such as the impact of extreme temperature and precipitation on phenology can influence tree range limits [@Morin2007].
+Beyond covariates and plot-level uncertainty, incorporating temporal uncertainty at the plot level, accounting for spatio-temporal covariance, could likely capture additional sources of variation in demographic rates.
+While our approach considers temporal stochasticity in climate and competition, which affect species range size [@Holt2022], there remains temporal variation in demographic rates beyond the covariates.
+This variability, possibly captured with random effects at the plot level, can influence range limits based on the degree of temporal autocorrelation and its relationship with the range [@Benning2022].
+For instance, an empirical study on perennial herbaceous species demonstrated that temporal environmental stochasticity reduced the population growth rate relative to the average [@Crone2016].
+In our study, this temporal variability is particularly relevant for survival (due to disturbance) and recruitment (due to phenology) rates because, in addition to having high temporal variability [@Clark1999a; @Leite2023], they represent the most significant drivers of population growth rate (Chapter 2).
+
+The effect of competition, similar to climate, increased from the center towards the border of the hot range, contrary to @Kunstler2021, who found no difference in the competition effect between the center and border of the species.
+Additionally, our results deviate from the Species Interactions-Abiotic Stress Hypothesis, predicting a stronger competition effect in less stressful climate conditions [@Louthan2015].
+When considering the relative position of the species across the temperature gradient, only the effect of climate at the cold range changed with temperature.
+This indicates that most species have a similar or higher suitable probability at the border of the cold range compared to their center distribution.
+We further tested whether the species' range size affects the relative difference in suitable probability; while the absolute values change, the pattern among the species remains unchanged.
+
+The climate gradient of temperature had a more significant effect than competition in changing the suitable probability of forest trees.
+This means that mean annual temperature, along with all latent variables, better explains how suitable probability changes across the temperature range.
+The choice of using only mean annual temperature as an explanatory variable in the metamodel can be improved.
+For instance, the model could be built accounting for mean annual temperature and precipitation to predict the complete two-dimensional distribution of the species' climate niche.
+Plot random effects could be further used to account for the nestedness of the data design, allowing the proper separation of the total variance of the metamodel into variance arising from individual- and plot-level demographic uncertainty.
+While we have assumed climate variability as independent and identically distributed random variables, this assumption can be relaxed to include temporal autocorrelation.
+Autocorrelated environmental fluctuation can significantly change a species' range limits due to nonlinear averaging [@Benning2022;@Holt2022].
+Lastly, although coexistence theory assumes that the abundance of competitors is at equilibrium [@Chesson2000a], testing this assumption remains practically impossible.
+
+Despite room for improvement in our study, there is a growing body of evidence indicating a mismatch between performance and occurrence [@McGill2012;@Thuiller2014;@Csergo2017;@bohner2020;@LeSquin2021;@Midolo2021;@Guyennon2023].
+Our approach can better capture the nuanced effect of climate and competition along with the spatio-temporal variation in $\lambda$, yet it was not enough to fully predict tree range limits.
+Since species distribution is influenced by processes at multiple scales  [@McGill2010;@Heffernan2014], it is challenging to rely on a single individual-level performance metric to predict it all [Evans2016].
+For instance, dispersion plays a crucial role in changing species distribution at larger spatial scales, either reducing its extent due to limited dispersal or increasing it through source-sink dynamics [@Pulliam2000].
+We propose that our novel metric, suitable probability, can be a key unifying factor linking local and landscape scales.
+
+- While forest trees vary in their frequency of occurrence across their distribution gradient, their relative abundance remains constant when present [@Canham2010].
+- This suggests that forest distribution should be assessed through colonization and extinction patch dynamics rather than local performance [@Canham2017]. 
+- However, instead of attempting to define the best scale for assessing species distribution, we propose using suitable probability to integrate local demographic dynamics with metapopulation theory.
+- Describe the metapopulation theory [@Levins1969].
+- The extension to include colonization and extinction rates as functions of the environment allows us to assess range limits  [@Holt2005].
+- There is an implicit assumption that when a patch is not occupied, it is necessarily available for colonization.
+- We relax this assumption and determine the amount of patch availability using the suitable probability.
+- When the population growth rate and its variability are high, suitable probability equals 1, and all non-occupied patches are available.
+- However, as $\lambda$ decreases or its variability increases, the suitable probability decreases, reducing the proportion of non-occupied patches available for colonization.
 
 # References
