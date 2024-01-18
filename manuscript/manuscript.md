@@ -289,11 +289,11 @@ For instance, the model could be built accounting for mean annual temperature an
 Plot random effects could be further used to account for the nestedness of the data design, allowing the proper separation of the total variance of the metamodel into variance arising from individual- and plot-level demographic uncertainty.
 While we have assumed climate variability as independent and identically distributed random variables, this assumption can be relaxed to include temporal autocorrelation.
 Autocorrelated environmental fluctuation can significantly change a species' range limits due to nonlinear averaging [@Benning2022;@Holt2022].
-Lastly, although coexistence theory assumes that the abundance of competitors is at equilibrium [@Chesson2000a], testing this assumption remains practically impossible.
+Lastly, although coexistence theory assumes the abundance of competitors to be at equilibrium [@Chesson2000a], testing this assumption remains practically impossible.
 
-Despite room for improvement in our study, there is a growing body of evidence indicating a mismatch between performance and occurrence [@McGill2012;@Thuiller2014;@Csergo2017;@bohner2020;@LeSquin2021;@Midolo2021;@Guyennon2023].
+Despite the many ways of improving our study, there is a growing body of evidence indicating a mismatch between performance and occurrence [@McGill2012;@Thuiller2014;@Csergo2017;@bohner2020;@LeSquin2021;@Midolo2021;@Guyennon2023].
 Our approach can better capture the nuanced effect of climate and competition along with the spatio-temporal variation in $\lambda$, yet it was not enough to fully predict tree range limits.
-Since species distribution is influenced by processes at multiple scales  [@McGill2010;@Heffernan2014], it is challenging to rely on a single individual-level performance metric to predict it all [Evans2016].
+Since species distribution is influenced by processes at multiple scales [@McGill2010;@Heffernan2014], it is challenging to rely on a single individual-level performance metric to predict it all [@Evans2016].
 For instance, dispersion plays a crucial role in changing species distribution at larger spatial scales, either reducing its extent due to limited dispersal or increasing it through source-sink dynamics [@Pulliam2000].
 We propose that our novel metric, suitable probability, can be a key unifying factor linking local and landscape scales.
 
@@ -306,5 +306,6 @@ We propose that our novel metric, suitable probability, can be a key unifying fa
 - We relax this assumption and determine the amount of patch availability using the suitable probability.
 - When the population growth rate and its variability are high, suitable probability equals 1, and all non-occupied patches are available.
 - However, as $\lambda$ decreases or its variability increases, the suitable probability decreases, reducing the proportion of non-occupied patches available for colonization.
+- This integrative approach allows one to account for both the local (e.g. competition) and landscape (e.g. fire disturbances and dispersal) drivers of forest dynamics when asssessing tree distribution.
 
 # References
