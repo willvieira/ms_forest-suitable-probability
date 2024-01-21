@@ -133,4 +133,4 @@ Model fit and the estimation of suitable probability for the cold and hot ranges
 
 \newpage
 
-# Reference
+# References
