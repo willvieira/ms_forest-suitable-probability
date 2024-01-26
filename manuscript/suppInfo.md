@@ -4,7 +4,7 @@
 
 ### Figure S1
 
-![The effect of competition on suitable probability across the four range positions. Each species point is color-coded based on its shade tolerance following @burns1990silvics.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-effect_of_comp-1.png){#fig:figsupp1}
+![The effect of competition on suitable probability across the four range positions. We assessed the competition effect by subtracting suitable probability under heterospecific to suitable probability under no competition. A positive relative difference indicates an increase in suitable probability from the center towards the border, while a negative difference indicates a decrease. Each species point is color-coded based on its shade tolerance following @burns1990silvics.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-effect_of_comp-1.png){#fig:figsupp1}
 
 \newpage
 
@@ -17,6 +17,13 @@
 ### Figure S3
 
 ![The relationship in the difference in suitable probability from the center to the border ($\Delta\Lambda$) between the cold and hot borders. A species at the bottom-left area (both $\Delta\Lambda$ are negative) indicates an unimodal decrease in suitable probability at the borders. Conversely, species at the top-right square exhibit an inverse unimodal shape.  In the top-left or bottom-right areas, suitable probability linearly decreases or increases from the cold toward the hot border, respectively. For the climate effect (left panel), species are colored following the centroid mean annual temperature among all observed plots. In the climate effect (left panel), species are color-coded based on the centroid of mean annual temperature among all observed plots. In the competition effect (right panel), species are classified by shade tolerance following @burns1990silvics.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_hot_vs_cold-1.png){#fig:figsupp3}
+
+\newpage
+
+### Figure S4
+
+![Relative difference in suitable probability between the center and border for climate and competition for 31 species located over the mean annual temperature gradient. Species points are grouped by a Multivariate Normal Density function with 75% probability.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-sp_diff_over_MAT-1.png){#fig:figsupp4}
+
 
 \newpage
 

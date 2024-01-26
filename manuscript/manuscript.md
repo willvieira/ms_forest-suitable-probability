@@ -48,7 +48,7 @@ This metric determines the probability of a positive population growth rate for 
 Our analysis is as follows.
 First, we used the IPM to predict species-specific $\lambda$ at the plot level under two conditions: without (fundamental niche) and with (realized niche) heterospecific competition.
 By replicating this calculation 100 times across all observed plots from the same species, we can assess the variability of $\lambda$ arising from both spatio-temporal stochasticity in the climate and competition and model uncertainty.
-As this variable $\lambda$ changes across the space, we used these observations to model how the species' local suitable probability changes across the mean annual temperature.
+As this variable $\lambda$ changes across space, we used these observations to model how the species' local suitable probability changes across the mean annual temperature.
 Specifically, we ask how climate and competition affect each species' local suitable probability.
 Then, we investigated how a species' local suitable probability changes from the center of its distribution toward the cold and hot borders.
 Finally, we disentangle the relative impacts of climate and competition in changing suitable probability from the center to the borders.
@@ -95,7 +95,7 @@ For the recruitment model, the annual ingrowth rate is modulated by conspecific 
 Furthermore, the annual survival rate of potential ingrowth individuals decreases linearly with the stand density of heterospecific individuals. 
 Finally, the intercept of each growth, survival, and recruitment model incorporates plot-level random effects to control for the variance shared within the plot-year observations.
 
-TODO maybe formalize the variability in equation is here
+<!-- TODO maybe formalize the variability in equation is here -->
 
 We use two open inventory datasets from eastern North America: the Forest Inventory and Analysis (FIA) dataset in the United States [@OConnell2007] and the permanent plots of forest inventory program for Québec [@Naturelles2016].
 These inventories, with multiple individual measurements over time and space, allow us to use the transition information between measurement years for predicting growth, survival, and recruitment rates.
@@ -209,42 +209,40 @@ We then investigated the local suitability probability using the empirical cumul
 The Figure @fig:sp-example shows the suitable probability expected over the mean annual temperature of the same species.
 We observed that the local suitability probability was reduced towards the cold border, with a stronger reduction under heterospecific competition (yellow curve).
 We can also observe that the decrease in suitable probability towards the border is nonlinear, becoming more substantial for heterospecific competition than for the no-competition condition. 
+
 The model fit and the estimation of suitable probability across the temperature gradient for all species are presented in Supplementary Material 2.
+We observed for most species a decrease of the climate effect at one border while the other remained unchanged.
+Additionally, a few species displayed a clear linear pattern of decreasing suitable probability from the cold to the hot border, with only one species (*Betula papyrifera*) having a decrease at both borders.
+Conversely, under the competition effect, most species exhibited a decrease in suitable probability at the hot border and an increase at the cold border, indicating a linear rise in the impact of competition from the cold to the hot border of the distribution.
 
 ![Suitable probability of *Abies balsamea* over the mean annual temperature gradient for cold and hot ranges under no competition (green) and heterospecific (yellow). The vertical dotted line represents the range limits of the MAT observed in the dataset.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-sp-example-1.png){#fig:sp-example width=100%}
 
-### Effect of climate and competition on suitable probability
+### Effect of climate and competition on suitable probability for the center and border distributions
 
-We investigated the effect of competition on the suitable probability at the border and center of the temperature range distribution for all species.
-Figure @fig:sp_comp_vs_nocomp2 compares the suitable probability under no competition to those under heterospecific competition for four locations from the mean annual temperature gradient.
+We investigated the effect of climate and competition on the suitable probability at the border and center of the temperature range distribution for all species.
+Because the border and center positions are relative to each species, we could not represent the continuous trend in suitable probability across the MAT for all 31 species together.
+Instead, we extracted the local suitable probability with and without heterospecific competition for four locations across the MAT gradient (Figure @fig:sp_comp_vs_nocomp2).
 Overall, suitable probability was high among the species, with an average of 0.78.
 Among the four locations, species presented a lower suitable probability at the border of the hot range, with an average of 0.67.
-Almost all species, in all conditions, are distributed below the identity line (1:1), meaning that heterospecific competition reduces the suitable probability.
-In the cold range, temperature decrease toward the border had little effect on the suitable probability for both competitive conditions.
-However, at the hot range, however, we can observe a significant shift in suitable probability from the center to the border.
 Across the temperature range, there is a monotonic decrease in suitable probability from the cold border toward the hot border.
 
 ![Estimated suitable probability for the 31 forest species across across the center and border of the cold and hot ranges. The x-axis represents the mean annual temperature gradient similar to Figure @fig:sp-example, but is discretized at the border and center limits relative to each species. We highlighted the balsam fir species in red. Note that we omitted the parameter uncertainty of each species in this figure to avoid overlap and increase clarity.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-sp_comp_vs_nocomp2-1.png){#fig:sp_comp_vs_nocomp2 width=100%}
-<!-- 
-While the negative effect of climate on suitable probability is evident, distinguishing the individual effects of competition remains challenging.
-Hence, we further assessed the impact of competition on reducing suitable probability by subtracting the suitable probability under heterospecific competition from the suitable probability with no competition (Figure S1).
-Even when isolating the effect of climate, the negative impact of heterospecific competition on suitable probability increases toward the border of the hot range. -->
+
+We further disentangle the influence of competition from that of climate by calculating the difference between suitable probability under heterospecific competition and without competition.
+A negative difference signifies competition reduces suitable probability, while positive differences indicate an increase.
+Across the four climate locations, heterospecific competition consistently reduced suitable probability for most species, with the magnitude of reduction intensifying from the cold to the hot border (Figure S1).
+This suggests that the decline in suitable probability observed from the cold to the hot border (Figure @fig:sp_comp_vs_nocomp2) results from the combined effect of climate and competition.
 
 ### Suitable probability change from center to border
 
 We investigated the relative effect of climate and competition on changing suitable probability from the center to the border of the species distribution (Figure @fig:diff_sp_hist).
-A positive relative difference indicates an increase in suitable probability from the center towards the border while a negative difference a decrease.
+A positive relative difference indicates an increase in suitable probability from the center towards the border, while a negative difference indicates a decrease.
 Most species exhibited a decrease in suitable probability at the hot border relative to the center.
 Alternatively, most species showed a reduction in the effect of competition toward the cold border.
 However, the climate effect in the cold range was more variable, with some species experiencing an increase and others a decrease in suitable probability.
 Overall, the relative difference in suitable probability from the center toward the cold and hot borders was more influenced by climate rather than competition.
 
 ![Difference in suitable probability for climate and competition effects over the cold and hot ranges. Negative values denote a decrease in species suitable probability from the center towards the distribution border, while positive values indicate an increase. Specifically, a negative value for climate at the hot (or cold) range signifies a reduction in suitable probability as temperature rises (or falls) towards the border. Boxplots determine the 25-75 quantile distribution among the species.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_hist-1.png){#fig:diff_sp_hist width=100%}
-
-In our investigation of whether suitable probability decreases simultaneously at both borders (indicating a unimodal shape) or exhibits a linear pattern from one border to the other (Figure S3), we found distinct patterns under the climate and competition effects.
-We observed for most species a decrease of the climate effect at one border while the other remained unchanged.
-Additionally, a few species displayed a clear linear pattern of decreasing suitable probability from the cold to the hot border, with only one species (*Betula _papyrifera_) having a decrease at both borders.
-Conversely, under the competition effect, most species exhibited a decrease in suitable probability at the hot border and an increase at the cold border, indicating a linear rise in the impact of competition from the cold to the hot border of the distribution.
 
 # Discussion
 
@@ -268,7 +266,7 @@ The decline in suitable probability from the cold to the hot border suggests a p
 This result is consistent with reduced population growth rates in North American [@schultz2022;@LeSquin2021] and European [@Guyennon2023] forest trees, except for the contrasting pattern observation by @Purves2009.
 The higher suitable probability in the cold range compared to the hot range could be attributed to multiple factors.
 First, species may still follow their climate niche post the last glaciation, explaining why the current cold range limit does not align with the expected niche distribution [@Svenning2007], potentially leading to a colonization debt [@Talluto2017].
-Notably, four of the six species exhibiting a significant decrease in suitable probability from the center toward the cold range were already at the extreme cold observed in the dataset (Figure @fig:sp_diff_over_MAT).
+Notably, four of the six species exhibiting a significant decrease in suitable probability from the center toward the cold range were already at the extreme cold observed in the dataset (Figure S4).
 
 Our model may however overlook crucial drivers of species performance, despite capturing a substantial amount of variation from parameter uncertainty at the plot level.
 Factors such as the impact of extreme temperature and precipitation on phenology can influence tree range limits [@Morin2007].
