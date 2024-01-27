@@ -189,7 +189,7 @@ The center location is defined as the centroid of MAT for the focal species.
 Although the center location has the same MAT for the cold and hot ranges, both are retained because the model is fitted separately for the cold and hot ranges.
 Finally, we estimated suitable probability for each location under no competition (fundamental niche) and heterospecific competition (realized niche) conditions, using the empirical cumulative distribution function over 1000 predictive draws.
 
-The code for the computation of each plot-year $\lambda$ is available at [https://github.com/willvieira/forest-IPM/tree/master/simulations/lambda_plot](https://github.com/willvieira/forest-IPM/tree/master/simulations/lambda_plot), and the code to model the linear model is at [https://github.com/willvieira/forest-IPM/tree/master/simulations/model_lambdaPlot/]()https://github.com/willvieira/forest-IPM/tree/master/simulations/model_lambdaPlot/.
+The code for the computation of each plot-year $\lambda$ is available at [https://github.com/willvieira/forest-IPM/tree/master/simulations/lambda_plot](https://github.com/willvieira/forest-IPM/tree/master/simulations/lambda_plot), and the code to model the linear model is at [https://github.com/willvieira/forest-IPM/tree/master/simulations/model_lambdaPlot/](https://github.com/willvieira/forest-IPM/tree/master/simulations/model_lambdaPlot/).
 
 # Results
 
