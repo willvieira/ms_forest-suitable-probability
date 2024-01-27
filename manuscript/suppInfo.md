@@ -138,6 +138,4 @@ Model fit and the estimation of suitable probability for the cold and hot ranges
 
 ![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-31.png){#fig:sp_31}
 
-\newpage
-
 # References
