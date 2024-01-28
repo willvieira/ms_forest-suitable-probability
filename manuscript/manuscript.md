@@ -27,7 +27,7 @@ These differences can manifest between individual stages that motivated the deve
 Another source of heterogeneity arises from large-scale differences in neighboring patches, often described by the metapopulation theory [@Levins1969].
 This theory posits that the dynamics of occupied and empty patches in a landscape are driven by colonization and extinction processes. This theory posits that the dynamics of occupied and empty patches in a landscape are driven by colonization and extinction processes.
 Building on this theory, @Talluto2017 used patch variability to derive colonization and extinction rates of eastern North American trees, revealing their distribution to be out of equilibrium with climate.
-Therefore, while this result advances our understanding of the mechanisms governing large-scale tree distributions, there remains a need to reconcile it with local demographic dynamics, given that colonization and extinction processes ultimately manifest as demographic rates.
+Therefore, while this result advances our understanding of the mechanisms governing large-scale tree distributions, there remains a need to reconcile it with local demographic dynamics, given that colonization and extinction processes ultimately manifest from demographic rates.
 
 Theory predicts that the uncertainty arising from stochastic and heterogenous processes may lead to divergent outcomes in $\lambda$.
 Demographic and environmental stochasticity may increase the uncertainty in $\lambda$, consequently increasing the extinction risk, particularly for populations with low performance or low density [@Holt2005; @Gravel2011].
