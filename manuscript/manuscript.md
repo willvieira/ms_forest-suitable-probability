@@ -149,11 +149,11 @@ We chose to use MAT instead of latitude because we are interested in the species
 We assessed suitable probability separately for the cold and hot ranges, employing a linear model to determine the relationship between $\lambda$ and MAT.
 The spatio-temporal variability of $\lambda$ arising from environmental stochasticity and parameter uncertainty influences the variance of the linear model.
 As this variance may change depending on the range position, we introduce a submodel for the variance of the linear model to be dependent on MAT.
-To accommodate potential asymmetry in this variance, we use a Skew Normal Distribution ($\mathcal{SN}$) incorporating an additional parameter ($\alpha$) that can introduce right or left-skewed tails to the variance:
+To accommodate potential asymmetry in this variance, we use a Skew Normal Distribution ($SN$) incorporating an additional parameter ($\alpha$) that can introduce right or left-skewed tails to the variance:
 
 $$
 \begin{split}
-&log(\lambda) \sim \mathcal{SN}(\xi, \omega, \alpha) \\[2pt]
+&log(\lambda) \sim SN(\xi, \omega, \alpha) \\[2pt]
 &\xi = \beta_{1, \xi} \times MAT + \beta_{0, \xi} \\[2pt]
 &\omega = e^{\beta_{1, \omega} \times MAT + \beta_{0, \omega}}
 \end{split}
