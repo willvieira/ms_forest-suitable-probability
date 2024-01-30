@@ -76,66 +76,6 @@
 
 Model fit and the estimation of suitable probability for the cold and hot ranges for each of the 31 eastern North American tree species. The model's average line and 90% prediction intervals are estimated using 500 draws from the posterior distribution. The vertical dotted line represents the range limits of the observed mean annual temperature in the dataset.
 
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-1.png){#fig:sp_1}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-2.png){#fig:sp_2}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-3.png){#fig:sp_3}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-4.png){#fig:sp_4}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-5.png){#fig:sp_5}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-6.png){#fig:sp_6}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-7.png){#fig:sp_7}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-8.png){#fig:sp_8}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-9.png){#fig:sp_9}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-10.png){#fig:sp_10}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-11.png){#fig:sp_11}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-12.png){#fig:sp_12}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-13.png){#fig:sp_13}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-14.png){#fig:sp_14}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-15.png){#fig:sp_15}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-16.png){#fig:sp_16}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-17.png){#fig:sp_17}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-18.png){#fig:sp_18}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-19.png){#fig:sp_19}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-20.png){#fig:sp_20}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-21.png){#fig:sp_21}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-22.png){#fig:sp_22}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-23.png){#fig:sp_23}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-24.png){#fig:sp_24}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-25.png){#fig:sp_25}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-26.png){#fig:sp_26}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-27.png){#fig:sp_27}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-28.png){#fig:sp_28}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-29.png){#fig:sp_29}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-30.png){#fig:sp_30}
-
-![](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/appen-31.png){#fig:sp_31}
+The complete figures for the model fit for each species is available in the following link: [https://willvieira.github.io/book_forest-demography-IPM/extinction_risk.html#appendices](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk.html#appendices)
 
 # References
