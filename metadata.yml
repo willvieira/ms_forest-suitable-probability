@@ -1,6 +1,6 @@
 title: "Unifying individual and metapopulation scales with stochastic population models: the effect of climate and competition on tree range limits"
 running_title: "Unifying scales with stochastic population models"
-abstract: ""
+abstract: "Despite recent calls to use demographic range models to scale the effect of individual dynamics in setting range limits, there is a growing body of evidence showing that tree species' performance is not correlated with their distribution. In this study, we ask whether the challenge in predicting species distribution from demographic rates stems from overlooking the inherent variability of forest systems and the underlying uncertainty of forest models. We use a stochastic Integral Projection Model to predict species-level intrinsic population growth ($\\lambda$) for 31 eastern North American tree species. We introduce a novel metric for species-level performance called local suitable probability, which captures observed spatiotemporal stochasticity in climate and competition while accommodating model uncertainty. Our focus is on investigating how suitable probability changes across the cold-to-hot species range distribution over the mean annual temperature gradient. Our findings reveal a consistent, nearly linear decline in suitable probability from the cold to hot borders across the species. This shift in suitable probability from the center towards the cold and hot borders is primarily driven by climate rather than competition. These results, supported by a novel approach accounting for uncertainty, enhance our understanding of the nuanced interplay between climate and competition across species ranges. We conclude by proposing a novel theory that uses the local suitable probability to establish a link between individual demographic rates and metapopulation dynamics."
 keywords:
     - "Integral Projection Models"
     - "Species distribution"
@@ -48,8 +48,15 @@ double-blind: false
 
 # metadata associated with thesis template
 chapter-number: 3
-chapter-title: ""
-resume-contribution: ""
+chapter-title: "Intégrer les échelles individuelle et métapopulation à travers des modèles stochastiques de population : l'impact du climat et de la compétition sur les limites de répartition des arbres"
+resume-contribution: |
+  Bien que les modèles d'aire de répartition démographique soient utilisés de plus en plus fréquemment pour mesurer l'effet de la dynamique individuelle dans la définition des limites de l'aire de répartition, un nombre croissant de preuves montrent que la performance des espèces d'arbres n'est pas corrélée à leur répartition. Dans cette étude, nous nous demandons si la difficulté de prédire la répartition des espèces à partir des taux démographiques peut être expliquée par l'absence de l'intégration de la variabilité inhérente des systèmes forestiers et l'incertitude sous-jacente des modèles forestiers.
+
+  Pour répondre à cette question, nous avons développé un Modèle de Projection Intégrale stochastique pour prédire la croissance démographique intrinsèque au niveau des espèces ($\\lambda$) pour 31 espèces d'arbres de l'est de l'Amérique du Nord. Nous  avons introduit une nouvelle métrique pour les performances spécifiques appelée probabilité d'habitat local approprié qui capture la stochasticité spatio-temporelle observée dans le climat et la compétition tout en tenant compte de l'incertitude du modèle. Notre objectif était d'étudier l'évolution de cette probabilité dans la distribution des aires de répartition des espèces froides à chaudes en fonction du gradient de température annuel moyen.
+
+  Nos résultats ont révélé un déclin constant et presque linéaire de la probabilité d'habitat local approprié à partir des frontières froides jusqu'aux frontières chaudes et à travers les espèces. Le déplacement de cette probabilité du centre vers les frontières froides et chaudes était principalement influencé par le climat plutôt que par la compétition entre les espèces. Ces résultats, étayés par une nouvelle approche tenant compte de l'incertitude, améliorent notre compréhension de l'interaction complexe entre le climat et la compétition définissant les aires de répartition des espèces. Ils nous permettent également de proposer une nouvelle théorie qui utilise la probabilité d'habitat local approprié pour établir un lien entre les taux démographiques individuels et la dynamique des métapopulations.
+
+  Cette étude a été conçu par Dominique Gravel et moi-même. Le modèle a été développé par Andrew MacDonald et moi-même. Les analyses, les figures, et la première version du manuscrit ont été réalisé par moi-même. Dominique Gravel a contribué à la révision de ce manuscrit.
 published: false
 # if published = true
 journal: ""

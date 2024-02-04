@@ -1,35 +1,26 @@
 ## Supplementary Material 1
 
-\newpage
-
-### Figure S1
-
-![The effect of competition on suitable probability across the four range positions. We assessed the competition effect by subtracting suitable probability under heterospecific to suitable probability under no competition. A positive relative difference indicates an increase in suitable probability from the center towards the border, while a negative difference indicates a decrease. Each species point is color-coded based on its shade tolerance following @burns1990silvics.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-effect_of_comp-1.png){#fig:figsupp1}
+![The effect of competition on suitable probability across the four range positions. We assessed the competition effect by subtracting suitable probability under heterospecific to suitable probability under no competition. A positive relative difference indicates an increase in suitable probability from the center towards the border, while a negative difference indicates a decrease. Each species point is color-coded based on its shade tolerance following @burns1990silvics.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-effect_of_comp-1.png){#fig:figsupp1 short-caption="The effect of competition on suitable probability across the four range positions."}
 
 \newpage
 
-### Figure S2
-
-![Difference in suitable probability between the center and border of the distribution (left panels) and no competition and heterospecific competition (right) for the cold (top) and hot (bottom) ranges. The color of the line connecting each species' conditions represents the intensity of change in suitable probability—the more intense the color, the greater the shift between conditions.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_raw-1.png){#fig:figsupp2}
+![Difference in suitable probability between the center and border of the distribution (left panels) and no competition and heterospecific competition (right) for the cold (top) and hot (bottom) ranges. The color of the line connecting each species' conditions represents the intensity of change in suitable probability—the more intense the color, the greater the shift between conditions.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_raw-1.png){#fig:figsupp2 short-caption="Difference in suitable probability between the center and border of the distribution (left panels) and no competition and heterospecific competition (right) for the cold (top) and hot (bottom) ranges."}
 
 \newpage
 
-### Figure S3
-
-![The relationship in the difference in suitable probability from the center to the border ($\Delta\Lambda$) between the cold and hot borders. A species at the bottom-left area (both $\Delta\Lambda$ are negative) indicates an unimodal decrease in suitable probability at the borders. Conversely, species at the top-right square exhibit an inverse unimodal shape.  In the top-left or bottom-right areas, suitable probability linearly decreases or increases from the cold toward the hot border, respectively. For the climate effect (left panel), species are colored following the centroid mean annual temperature among all observed plots. In the climate effect (left panel), species are color-coded based on the centroid of mean annual temperature among all observed plots. In the competition effect (right panel), species are classified by shade tolerance following @burns1990silvics.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_hot_vs_cold-1.png){#fig:figsupp3}
+![The relationship in the difference in suitable probability from the center to the border ($\Delta\Lambda$) between the cold and hot borders. A species at the bottom-left area (both $\Delta\Lambda$ are negative) indicates an unimodal decrease in suitable probability at the borders. Conversely, species at the top-right square exhibit an inverse unimodal shape.  In the top-left or bottom-right areas, suitable probability linearly decreases or increases from the cold toward the hot border, respectively. For the climate effect (left panel), species are colored following the centroid mean annual temperature among all observed plots. In the climate effect (left panel), species are color-coded based on the centroid of mean annual temperature among all observed plots. In the competition effect (right panel), species are classified by shade tolerance following @burns1990silvics.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_hot_vs_cold-1.png){#fig:figsupp3 short-caption="The relationship in the difference in suitable probability from the center to the border ($\Delta\Lambda$) between the cold and hot borders."}
 
 \newpage
 
-### Figure S4
-
-![Relative difference in suitable probability between the center and border for climate and competition for 31 species located over the mean annual temperature gradient. Species points are grouped by a Multivariate Normal Density function with 75% probability.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-sp_diff_over_MAT-1.png){#fig:figsupp4}
-
+![Relative difference in suitable probability between the center and border for climate and competition for 31 species located over the mean annual temperature gradient. Species points are grouped by a Multivariate Normal Density function with 75% probability.](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-sp_diff_over_MAT-1.png){#fig:figsupp4 short-caption="Relative difference in suitable probability between the center and border for climate and competition for 31 species located over the mean annual temperature gradient."}
 
 \newpage
-
-### Table 1
 
 \begin{longtable}{lrrr}
+\caption{List of species and their frequency across the dataset.}
+\label{variability_impl_mech}
+\endfirsthead
+\endhead
   \toprule
     Species & Number of
     plots & Number of
@@ -74,8 +65,8 @@
 
 ## Supplementary Material 2
 
-Model fit and the estimation of suitable probability for the cold and hot ranges for each of the 31 eastern North American tree species. The model's average line and 90% prediction intervals are estimated using 500 draws from the posterior distribution. The vertical dotted line represents the range limits of the observed mean annual temperature in the dataset.
+The complete figures for the model fit for each species is available in the following link: [https://willvieira.github.io/book_forest-demography-IPM/extinction_risk.html#appendices](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk.html#appendices).
 
-The complete figures for the model fit for each species is available in the following link: [https://willvieira.github.io/book_forest-demography-IPM/extinction_risk.html#appendices](https://willvieira.github.io/book_forest-demography-IPM/extinction_risk.html#appendices)
+Each figures represents the model fit and the estimation of suitable probability for the cold and hot ranges for each of the 31 eastern North American tree species. The model's average line and 90% prediction intervals are estimated using 500 draws from the posterior distribution. The vertical dotted line represents the range limits of the observed mean annual temperature in the dataset.
 
 # References
