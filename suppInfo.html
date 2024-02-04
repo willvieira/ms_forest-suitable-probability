@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Unifying individual and metapopulation scales with stochastic population models: the effect of climate and competition on tree range limits</title>
+      <script src="https://hypothes.is/embed.js" async></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <!--fonts-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+      <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:300,300i,400,400i,600,600i&display=swap&subset=greek" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+      <style>
+         h1.title {
+            font-size: 38px;
+            text-align: center;
+         }
+
+         h4.author {
+            font-size: 18px;
+            text-align: center;
+         }
+
+         body {
+         font-size: 18px;
+         font-family: "Source Sans Pro", sans-serif;
+         }
+         body b,
+         body strong {
+         font-weight: 600;
+         }
+         body code,
+         body pre {
+         font-family: "Source Code Pro", monospace;
+         }
+         .container {
+         display: block !important;
+         margin: 0px auto;
+         padding: 3em;
+         max-width: 1000px;
+         }
+         header {
+         background-color: #f8f8f8;
+         }
+         header h1 {
+         margin-top: -0.2em;
+         padding-left: 0.5em;
+         }
+         a {
+         text-decoration: none;
+         color: #00667F;
+         }
+         a:hover {
+         color: #2a6496;
+         }
+         article p {
+         line-height: 150%;
+         color:#131313;
+         }
+         article.container {
+         max-width: 800px;
+         }
+         d-appendix {
+         font-size: 16px;
+         line-height: 1.3;
+         padding-left: 18px;
+         border: 1px solid rgba(0,0,0,0.1);
+         background: rgba(0, 0, 0, 0.02);
+         padding: 10px 18px;
+         color: rgba(150, 150, 150, 1);
+         overflow: hidden;
+         margin-top: -10px;
+         word-wrap: break-word;
+         display: block;
+         }
+         /* columns for appendix */
+         .row {
+         display: flex;
+         margin-left: -65px;
+         }
+         /* Create two equal columns that sits next to each other */
+         .rightColumn {
+         flex: 10%;
+         padding: 5px;
+         height: auto; /* Should be removed. Only for demonstration */
+         font-weight: 200;
+         margin-right: 110px;
+         }
+         .leftColumn {
+         padding: 5px;
+         width: 150px;
+         height: auto; /* Should be removed. Only for demonstration */
+         }
+         article h1 {
+         margin-top: 2em;
+         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+         font-weight: 400;
+         }
+         article h2 {
+         margin-top: 1em;
+         margin-bottom: 0px;
+         padding-bottom: 0px;
+         font-weight: 400;
+         }
+         article h3 {
+         font-weight: 400;
+         }
+         .citation {
+         border-bottom: 1px #00667F;
+         }
+         figure {
+         font-size: 85%;
+         color: #767e79;
+         margin: 2em 0;
+         line-height: 1.3;
+         text-align: center;
+         }
+         figure img {
+         max-width: 100%;
+         }
+         figure figcaption {
+         text-align: left;
+         padding: 1em;
+         }
+         figure figcaption span {
+         color: #6c7670;
+         font-weight: 600;
+         }
+         nav.artifacts {
+         text-align: center;
+         background-color: #edefee;
+         padding: 1em;
+         }
+         .creators .creator {
+         margin-bottom: 0.5em;
+         padding-left: 1em;
+         }
+         .creators .creator .author {
+            display: inline-block;
+            color: #859089;
+            padding-bottom: 1em;
+         }
+         .creators .creator .affiliation {
+            display: inline-block;
+            color: #859089;
+            line-height: 1.4;
+            font-size: 85%;
+         }
+         .creators .creator .author {
+         color: #1e201f;
+         font-weight: 600;
+         }
+         .creators .creator .orcid {
+         padding-left: 2em;
+         font-family: "Source Code Pro", monospace;
+         float: right;
+         }
+         summary {
+         padding-top: 2em;
+         padding-left: 1em;
+         padding-right: 3em;
+         line-height: 1.3;
+         }
+         summary::before {
+         content: "Abstract";
+         font-weight: 600;
+         }
+         /* Reference when hover */
+         .tooltip-inner{
+         max-width:750px;
+         font-size: 90%;
+         text-align: left;
+         line-height: 1.5;
+         padding:0.8rem;
+         background-color:rgb(245, 245, 245);
+         border-radius: 10px;
+         }
+         .fade{
+         opacity:0;
+         transition:opacity .15s linear
+         }
+         .fade.show{
+         opacity:1
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <section class="container">
+            <h2 style="padding-left: 0.7em;">Supporting information</h2>
+            <h1>Unifying individual and metapopulation scales with stochastic population models: the effect of climate and competition on tree range limits</h1>
+            <section class="creators">
+            <div class="creator">
+                                 <div class="author">Willian Vieira</div>
+                  <div class="affiliation"><sup>
+                                             1                  </sup></div>
+                                       <a style="font-size: 1.2em; color: rgb(172, 203, 72);"  href='https://orcid.org/0000-0003-0283-4570' target="_blank";">
+                        <i class="ai ai-orcid"></i>
+                     </a>
+                                                         <a style="font-size: 1em; color: #00667F;" href = "mailto: willian.vieira@usherbrooke.ca">
+                        <i class="fas fa-envelope"></i>
+                     </a>
+                                    &nbsp;
+                                 <div class="author">Dominique Gravel</div>
+                  <div class="affiliation"><sup>
+                                             1                  </sup></div>
+                                       <a style="font-size: 1.2em; color: rgb(172, 203, 72);"  href='https://orcid.org/0000-0002-4498-7076' target="_blank";">
+                        <i class="ai ai-orcid"></i>
+                     </a>
+                                                      &nbsp;
+                              <br>
+                                 <div class="affiliation"><sup>1</sup> Département de biologie, Université de Sherbrooke, Sherbrooke, Québec, Canada</div><br>
+                           </div>
+            </section>
+         </section>
+      </header>
+
+      <nav class="artifacts">
+         <a href="https://github.com/willvieira/ms_forest-suitable-probability" title="Github repo" target="_blank"><img src="https://img.shields.io/badge/write-github-blue.svg" /></a>
+         <a href="manuscript.pdf" title="Github repo" target="_blank"><img src="https://img.shields.io/badge/read-pdf-green.svg" /></a>
+         <a href="manuscript.docx" title="Github repo" target="_blank"><img src="https://img.shields.io/badge/read-docx-yellow.svg" /></a>
+               </nav>
+
+      <article class="container js-toc-content">
+         <h2 id="supplementary-material-1">Supplementary Material 1</h2>
+         <div id="fig:figsupp1" class="fignos">
+         <figure>
+         <img src="https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-effect_of_comp-1.png" data-short-caption="The effect of competition on suitable probability across the four range positions." alt="Figure 1: The effect of competition on suitable probability across the four range positions. We assessed the competition effect by subtracting suitable probability under heterospecific to suitable probability under no competition. A positive relative difference indicates an increase in suitable probability from the center towards the border, while a negative difference indicates a decrease. Each species point is color-coded based on its shade tolerance following Burns, Honkala, and others (1990)." /><figcaption aria-hidden="true"><span>Figure 1:</span> The effect of competition on suitable probability across the four range positions. We assessed the competition effect by subtracting suitable probability under heterospecific to suitable probability under no competition. A positive relative difference indicates an increase in suitable probability from the center towards the border, while a negative difference indicates a decrease. Each species point is color-coded based on its shade tolerance following <span class="citation" data-cites="burns1990silvics">Burns, Honkala, and others (<a href="#ref-burns1990silvics" role="doc-biblioref">1990</a>)</span>.</figcaption>
+         </figure>
+         </div>
+         <div id="fig:figsupp2" class="fignos">
+         <figure>
+         <img src="https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_raw-1.png" data-short-caption="Difference in suitable probability between the center and border of the distribution (left panels) and no competition and heterospecific competition (right) for the cold (top) and hot (bottom) ranges." alt="Figure 2: Difference in suitable probability between the center and border of the distribution (left panels) and no competition and heterospecific competition (right) for the cold (top) and hot (bottom) ranges. The color of the line connecting each species’ conditions represents the intensity of change in suitable probability—the more intense the color, the greater the shift between conditions." /><figcaption aria-hidden="true"><span>Figure 2:</span> Difference in suitable probability between the center and border of the distribution (left panels) and no competition and heterospecific competition (right) for the cold (top) and hot (bottom) ranges. The color of the line connecting each species’ conditions represents the intensity of change in suitable probability—the more intense the color, the greater the shift between conditions.</figcaption>
+         </figure>
+         </div>
+         <div id="fig:figsupp3" class="fignos">
+         <figure>
+         <img src="https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_hot_vs_cold-1.png" data-short-caption="The relationship in the difference in suitable probability from the center to the border ($\Delta\Lambda$) between the cold and hot borders." alt="Figure 3: The relationship in the difference in suitable probability from the center to the border (\Delta\Lambda) between the cold and hot borders. A species at the bottom-left area (both \Delta\Lambda are negative) indicates an unimodal decrease in suitable probability at the borders. Conversely, species at the top-right square exhibit an inverse unimodal shape. In the top-left or bottom-right areas, suitable probability linearly decreases or increases from the cold toward the hot border, respectively. For the climate effect (left panel), species are colored following the centroid mean annual temperature among all observed plots. In the climate effect (left panel), species are color-coded based on the centroid of mean annual temperature among all observed plots. In the competition effect (right panel), species are classified by shade tolerance following Burns, Honkala, and others (1990)." /><figcaption aria-hidden="true"><span>Figure 3:</span> The relationship in the difference in suitable probability from the center to the border (<span class="math inline">\(\Delta\Lambda\)</span>) between the cold and hot borders. A species at the bottom-left area (both <span class="math inline">\(\Delta\Lambda\)</span> are negative) indicates an unimodal decrease in suitable probability at the borders. Conversely, species at the top-right square exhibit an inverse unimodal shape. In the top-left or bottom-right areas, suitable probability linearly decreases or increases from the cold toward the hot border, respectively. For the climate effect (left panel), species are colored following the centroid mean annual temperature among all observed plots. In the climate effect (left panel), species are color-coded based on the centroid of mean annual temperature among all observed plots. In the competition effect (right panel), species are classified by shade tolerance following <span class="citation" data-cites="burns1990silvics">Burns, Honkala, and others (<a href="#ref-burns1990silvics" role="doc-biblioref">1990</a>)</span>.</figcaption>
+         </figure>
+         </div>
+         <div id="fig:figsupp4" class="fignos">
+         <figure>
+         <img src="https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-sp_diff_over_MAT-1.png" data-short-caption="Relative difference in suitable probability between the center and border for climate and competition for 31 species located over the mean annual temperature gradient." alt="Figure 4: Relative difference in suitable probability between the center and border for climate and competition for 31 species located over the mean annual temperature gradient. Species points are grouped by a Multivariate Normal Density function with 75% probability." /><figcaption aria-hidden="true"><span>Figure 4:</span> Relative difference in suitable probability between the center and border for climate and competition for 31 species located over the mean annual temperature gradient. Species points are grouped by a Multivariate Normal Density function with 75% probability.</figcaption>
+         </figure>
+         </div>
+         <h2 id="supplementary-material-2">Supplementary Material 2</h2>
+         <p>The complete figures for the model fit for each species is available in the following link: <a href="https://willvieira.github.io/book_forest-demography-IPM/extinction_risk.html#appendices">https://willvieira.github.io/book_forest-demography-IPM/extinction_risk.html#appendices</a>.</p>
+         <p>Each figures represents the model fit and the estimation of suitable probability for the cold and hot ranges for each of the 31 eastern North American tree species. The model’s average line and 90% prediction intervals are estimated using 500 draws from the posterior distribution. The vertical dotted line represents the range limits of the observed mean annual temperature in the dataset.</p>
+         <h1 class="unnumbered" id="references">References</h1>
+         <div id="refs" class="references hanging-indent" role="doc-bibliography">
+         <div id="ref-burns1990silvics">
+         <p>Burns, Russell M, Barbara H Honkala, and others. 1990. “Silvics of North America: 1. Conifers; 2. Hardwoods Agriculture Handbook 654.” <em>US Department of Agriculture, Forest Service, Washington, DC</em>.</p>
+         </div>
+         </div>
+      </article>
+
+      <d-appendix>
+         <sections class="container">
+            <div class="row">
+               <div class="leftColumn">
+                  <p>References</p>
+               </div>
+                  <div class="rightColumn", id = 'newrefs'>
+               </div>
+            </div>
+         </sections>
+      </d-appendix>
+
+   </body>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+   <script type="text/javascript">
+      // Remove References h1
+      document.getElementById("references").remove();
+      // Move the references from body to appendix
+      var theNewRefs = document.getElementById("newrefs");
+      var theRefs = document.getElementById("refs");
+      theNewRefs.appendChild(theRefs);
+   </script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   <script>
+      document.querySelectorAll('[role="doc-biblioref"]').forEach(function (el){
+
+         // get info from reference (to be used in tittle of hover)
+         var refID = el.href.replace(/.*#ref-/, '');
+         var ref = document.getElementById('ref-'.concat(refID));
+         // Title
+         if(/“(.*?)”/g.test(ref.textContent)) {
+            var title = ref.textContent.match(/“(.*?)”/g)[0];
+            title = title.replace(/“/, '').replace(/”/, '').replace(/\./, '');
+         } else {
+            var title = ref.querySelector('em').textContent;
+            var journal = '';
+         }
+         // Journal
+         if(typeof journal == "undefined" & ref.querySelector('em') != null) {
+            var journal = ref.querySelector('em').textContent;
+         }
+         // DOI
+         if(ref.querySelector('a') != null) {
+            var DOI = ref.querySelector('a').textContent;
+            title = "<a href='" + DOI + "' target='_blank';>" + title + "</a>"
+         }
+         // Year
+         uglyYear = ref.textContent.match(/\. \d{4}\./g)[0];
+         var year = uglyYear.replace(/\. /, '').replace(/\./, '');
+         // Authors
+         var re = new RegExp ('(.*?)' + uglyYear, 'g');
+         var authors = ref.textContent.match(re)[0].replace(uglyYear, '').replace(/\s\s+/g, '');
+
+         // Create reference "title" content
+         var refTitle = "<b>" + title + "</b><br>" + authors + "<br>" +
+                        (journal == "" ? "" : journal + ", " ) +
+                        year;
+
+         // add "Tooltips" attributes to the link tag
+         el.setAttribute("data-toggle", "tooltip");
+         el.setAttribute("data-html", "true");
+         el.setAttribute("data-placement", "bottom");
+         el.setAttribute("title", refTitle);
+
+         // remove link href to references
+         el.removeAttribute("href");
+      });
+   </script>
+   <script>
+      $(function () {
+         $('[data-toggle="tooltip"]').tooltip({delay: {show: 300, hide: 500}})
+      })
+   </script>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+   <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', '');
+   </script>
+</html>

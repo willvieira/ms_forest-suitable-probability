@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Unifying individual and metapopulation scales with stochastic population models: the effect of climate and competition on tree range limits</title>
+      <script src="https://hypothes.is/embed.js" async></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <!--fonts-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+      <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:300,300i,400,400i,600,600i&display=swap&subset=greek" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+      <script src="https://cdn.jsdelivr.net/npm/walkway.js/src/walkway.min.js"></script>
+      <style>
+         h1.title {
+            font-size: 38px;
+            text-align: center;
+         }
+
+         h4.author {
+            font-size: 18px;
+            text-align: center;
+         }
+
+         body {
+         font-size: 18px;
+         font-family: "Source Sans Pro", sans-serif;
+         }
+         body b,
+         body strong {
+         font-weight: 600;
+         }
+         body code,
+         body pre {
+         font-family: "Source Code Pro", monospace;
+         }
+         .container {
+         display: block !important;
+         margin: 0px auto;
+         padding: 3em;
+         max-width: 1000px;
+         }
+         header {
+         background-color: #f8f8f8;
+         }
+         header h1 {
+         margin-top: 1em;
+         padding-left: 0.5em;
+         }
+         a {
+         text-decoration: none;
+         color: #00667F;
+         }
+         a:hover {
+         color: #2a6496;
+         }
+         article p {
+         line-height: 150%;
+         color:#131313;
+         }
+         article.container {
+         max-width: 800px;
+         }
+         d-appendix {
+         font-size: 16px;
+         line-height: 1.3;
+         padding-left: 18px;
+         border: 1px solid rgba(0,0,0,0.1);
+         background: rgba(0, 0, 0, 0.02);
+         padding: 10px 18px;
+         color: rgba(150, 150, 150, 1);
+         overflow: hidden;
+         margin-top: -10px;
+         word-wrap: break-word;
+         display: block;
+         }
+         /* columns for appendix */
+         .row {
+         display: flex;
+         margin-left: -65px;
+         }
+         /* Create two equal columns that sits next to each other */
+         .rightColumn {
+         flex: 10%;
+         padding: 5px;
+         height: auto; /* Should be removed. Only for demonstration */
+         font-weight: 200;
+         margin-right: 110px;
+         }
+         .leftColumn {
+         padding: 5px;
+         width: 150px;
+         height: auto; /* Should be removed. Only for demonstration */
+         }
+         article h1 {
+         margin-top: 2.2em;
+         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+         font-weight: 400;
+         }
+         article h2 {
+         margin-top: 1em;
+         margin-bottom: 0px;
+         padding-bottom: 0px;
+         font-weight: 400;
+         font-size: 1.8em;
+         }
+         article h3 {
+         font-weight: 400;
+         font-size: 1.5em;
+         margin-bottom: 0em;
+         }
+         article h4 {
+         font-weight: 400;
+         font-size: 1.25em;
+         margin-bottom: 0em;
+         }
+         .citation {
+         border-bottom: 1px #00667F;
+         }
+         figure {
+         font-size: 85%;
+         color: #767e79;
+         margin: 2em 0;
+         line-height: 1.3;
+         text-align: center;
+         }
+         figure img {
+         max-width: 100%;
+         }
+         figure figcaption {
+         text-align: left;
+         padding: 1em;
+         }
+         figure figcaption span {
+         color: #6c7670;
+         font-weight: 600;
+         }
+         nav.artifacts {
+         text-align: center;
+         background-color: #edefee;
+         padding-top: 5px;
+         padding-bottom: 9px;
+         }
+         .creators .creator {
+         margin-bottom: 0.5em;
+         padding-left: 1em;
+         }
+         .creators .creator .author {
+            display: inline-block;
+            color: #859089;
+            padding-bottom: 1em;
+         }
+         .creators .creator .affiliation {
+            display: inline-block;
+            color: #859089;
+            line-height: 1.4;
+            font-size: 85%;
+         }
+         .creators .creator .author {
+         color: #1e201f;
+         font-weight: 600;
+         }
+         .creators .creator .orcid {
+         padding-left: 2em;
+         font-family: "Source Code Pro", monospace;
+         float: right;
+         }
+         summary {
+         display: block;
+         padding-top: 2em;
+         padding-left: 1em;
+         padding-right: 3em;
+         line-height: 1.3;
+         }
+         summary::before {
+         content: "Abstract";
+         font-weight: 600;
+         }
+         /* Reference when hover */
+         .tooltip-inner{
+         max-width:750px;
+         font-size: 90%;
+         text-align: left;
+         line-height: 1.5;
+         padding:0.8rem;
+         background-color:rgb(245, 245, 245);
+         border-radius: 10px;
+         }
+         .fade{
+         opacity:0;
+         transition:opacity .15s linear
+         }
+         .fade.show{
+         opacity:1
+         }
+         .footer {
+         display: none;
+         position: fixed;
+         left: 20px;
+         bottom: 8px;
+         width: 20%;
+         text-align: left;
+         font-size: 84%;
+         font-weight: 100;
+         line-height: 0px;
+         }
+         footer.a:hover{
+         color:rgb(172, 203, 72)
+         }
+         #myBtn {
+         display: none;
+         position: fixed;
+         bottom: 10px;
+         right: 30px;
+         z-index: 99;
+         border: none;
+         outline: none;
+         background-color: transparent;
+         color: gray;
+         cursor: pointer;
+         padding: 15px;
+         border-radius: 10px;
+         font-size: 18px;
+         }
+         #myBtn:hover {
+         background-color: rgb(245, 245, 245); /* Add a dark-grey background on hover */
+         }
+         .arrowTop{
+         display: none;
+         position: fixed;
+         top: 20px;
+         right: 40px;
+         z-index: 99;
+         }
+         .eqnos { display: inline-block; position: relative; width: 100%; }
+         .eqnos br { display: none; }
+         .eqnos-number { position: absolute; right: 0em; top: 50%; line-height: 0; }
+      </style>
+   </head>
+   <body>
+      <header>
+         <section class="container">
+            <h1>Unifying individual and metapopulation scales with stochastic population models: the effect of climate and competition on tree range limits</h1>
+            <section class="creators">
+            <div class="creator">
+                                 <div class="author">Willian Vieira</div>
+                  <div class="affiliation"><sup>
+                                             1                  </sup></div>
+                                       <a style="font-size: 1.2em; color: rgb(172, 203, 72);"  href='https://orcid.org/0000-0003-0283-4570' target="_blank";">
+                        <i class="ai ai-orcid"></i>
+                     </a>
+                                                         <a style="font-size: 1em; color: #00667F;" href = "mailto: willian.vieira@usherbrooke.ca">
+                        <i class="fas fa-envelope"></i>
+                     </a>
+                                    &nbsp;
+                                 <div class="author">Dominique Gravel</div>
+                  <div class="affiliation"><sup>
+                                             1                  </sup></div>
+                                       <a style="font-size: 1.2em; color: rgb(172, 203, 72);"  href='https://orcid.org/0000-0002-4498-7076' target="_blank";">
+                        <i class="ai ai-orcid"></i>
+                     </a>
+                                                      &nbsp;
+                              <br>
+                                 <div class="affiliation"><sup>1</sup> Département de biologie, Université de Sherbrooke, Sherbrooke, Québec, Canada</div><br>
+                           </div>
+            </section>
+            <summary>
+               Despite recent calls to use demographic range models to scale the effect of individual dynamics in setting range limits, there is a growing body of evidence showing that tree species’ performance is not correlated with their distribution. In this study, we ask whether the challenge in predicting species distribution from demographic rates stems from overlooking the inherent variability of forest systems and the underlying uncertainty of forest models. We use a stochastic Integral Projection Model to predict species-level intrinsic population growth (<span class="math inline">\(\lambda\)</span>) for 31 eastern North American tree species. We introduce a novel metric for species-level performance called local suitable probability, which captures observed spatiotemporal stochasticity in climate and competition while accommodating model uncertainty. Our focus is on investigating how suitable probability changes across the cold-to-hot species range distribution over the mean annual temperature gradient. Our findings reveal a consistent, nearly linear decline in suitable probability from the cold to hot borders across the species. This shift in suitable probability from the center towards the cold and hot borders is primarily driven by climate rather than competition. These results, supported by a novel approach accounting for uncertainty, enhance our understanding of the nuanced interplay between climate and competition across species ranges. We conclude by proposing a novel theory that uses the local suitable probability to establish a link between individual demographic rates and metapopulation dynamics.
+            </summary>
+         </section>
+      </header>
+
+      <nav class="artifacts">
+         <p style="font-size: 15px; color:rgb(155, 154, 154);line-height: 0%; padding-bottom: 4px;">Generated using the <a style="color:rgb(100, 100, 100);"  href='#' target="_blank";">research-compendium-template</a></p>
+         <a href="https://github.com/willvieira/ms_forest-suitable-probability" title="Github repo" target="_blank"><img src="https://img.shields.io/badge/write-github-blue.svg" /></a>
+         <a href="manuscript.pdf" title="Github repo" target="_blank"><img src="https://img.shields.io/badge/read-pdf-green.svg" /></a>
+         <a href="manuscript.docx" title="Github repo" target="_blank"><img src="https://img.shields.io/badge/read-docx-yellow.svg" /></a>
+               </nav>
+
+      <article class="container">
+         <h1 id="introduction">Introduction</h1>
+         <p>Climate warming poses a significant challenge for several species, particularly for trees that struggle to follow temperature warming and moving ranges <span class="citation" data-cites="Sittaro2017">(Sittaro et al. <a href="#ref-Sittaro2017" role="doc-biblioref">2017</a>)</span>. It is imperative to untangle the mechanisms governing their range limits to forecast how they will respond to climate change. The niche theory predicts that a species will be present in suitable environmental conditions that allow the species to have a positive growth rate <span class="citation" data-cites="Hutchinson1957">(Hutchinson <a href="#ref-Hutchinson1957" role="doc-biblioref">1957</a>)</span>. From this theory, we can define the geographic distribution of a species as a manifestation of individual demographic rates, such as growth, survival, and recruitment <span class="citation" data-cites="holt2009">(Holt <a href="#ref-holt2009" role="doc-biblioref">2009</a>)</span>. By assuming these demographic rates change with the environment, we can predict a species’ range limits based on its individuals’ performance <span class="citation" data-cites="maguire1973niche holt2009">(Maguire Jr <a href="#ref-maguire1973niche" role="doc-biblioref">1973</a>; Holt <a href="#ref-holt2009" role="doc-biblioref">2009</a>)</span>.</p>
+         <p>Biotic interaction is undoubtedly an essential driver of demographic rates and, thereby, should also range limits. A recent theoretical framework based on the coexistence theory has been proposed to assess how biotic interactions can scale up to affect range limits <span class="citation" data-cites="Godsoe2017">(Godsoe et al. <a href="#ref-Godsoe2017" role="doc-biblioref">2017</a>)</span>. Formally, this framework evaluates the intrinsic population growth rate when the focal species is rare <span class="citation" data-cites="Chesson2000a">(Chesson <a href="#ref-Chesson2000a" role="doc-biblioref">2000</a>)</span>, both in scenarios where there is no competition (fundamental niche) and when competitive species reach equilibrium (realized niche). Numerous studies have explored the influence of climate and competition on the distribution of forest trees across their ranges. For instance, <span class="citation" data-cites="Ettinger2017">Ettinger and HilleRisLambers (<a href="#ref-Ettinger2017" role="doc-biblioref">2017</a>)</span> observed in field experiments that neighboring competition constrained individual performance within the range but facilitated better performance outside the range. Using a dynamic forest model, <span class="citation" data-cites="Scherrer2020">Scherrer et al. (<a href="#ref-Scherrer2020" role="doc-biblioref">2020</a>)</span> showed how slow demographic rates and negative competition reduce the uphill migration rate of 16 tree species. Despite this evidence, the application of this framework to predict the geographic distribution of species based on demographic rates often reveals weak correlations between the performance of tree species and their distribution <span class="citation" data-cites="McGill2012 Thuiller2014 Csergo2017 bohner2020 LeSquin2021 Midolo2021 Guyennon2023">(McGill <a href="#ref-McGill2012" role="doc-biblioref">2012</a>; Thuiller et al. <a href="#ref-Thuiller2014" role="doc-biblioref">2014</a>; Csergo et al. <a href="#ref-Csergo2017" role="doc-biblioref">2017</a>; Bohner and Diez <a href="#ref-bohner2020" role="doc-biblioref">2020</a>; Le Squin, Boulangeat, and Gravel <a href="#ref-LeSquin2021" role="doc-biblioref">2021</a>; Midolo, Wellstein, and Faurby <a href="#ref-Midolo2021" role="doc-biblioref">2021</a>; Guyennon et al. <a href="#ref-Guyennon2023" role="doc-biblioref">2023</a>)</span>.</p>
+         <p>One possible explanation for such discrepancy between demographic rates and species distribution is the common practice of assessing performance under average conditions and pointwise estimations, neglecting the associated uncertainty in these estimates. In ecological models, the uncertainty in estimation arises from three distinct sources. The first source involves measurement errors, a factor often neglected in ecological models <span class="citation" data-cites="Damgaard2020">(Damgaard <a href="#ref-Damgaard2020" role="doc-biblioref">2020</a>)</span>. The second is process uncertainty linked to model (mis)specification <span class="citation" data-cites="Harwood2003">(Harwood and Stokes <a href="#ref-Harwood2003" role="doc-biblioref">2003</a>)</span>. Even with a well-defined model and precise data, models must also consider parameter uncertainty <span class="citation" data-cites="Cressie2009 Shoemaker2020">(Cressie et al. <a href="#ref-Cressie2009" role="doc-biblioref">2009</a>; Shoemaker et al. <a href="#ref-Shoemaker2020" role="doc-biblioref">2020</a>)</span>.</p>
+         <p>Beyond data and model uncertainty, variability in demographic rates and subsequently in the population growth rate (<span class="math inline">\(\lambda\)</span>) arises from two primary sources <span class="citation" data-cites="van2020">(van Daalen and Caswell <a href="#ref-van2020" role="doc-biblioref">2020</a>)</span>. The first is attributed to demographic and environmental stochasticity, where individuals exposed to identical conditions may exhibit different responses simply by chance <span class="citation" data-cites="Caswell2009">(Caswell <a href="#ref-Caswell2009" role="doc-biblioref">2009</a>)</span>. The second source of variability arises from heterogeneity encountered at various scales. These differences can manifest between individual stages that motivated the development of structured population models <span class="citation" data-cites="Lewis1942 leslie1945">(Lewis <a href="#ref-Lewis1942" role="doc-biblioref">1942</a>; Leslie <a href="#ref-leslie1945" role="doc-biblioref">1945</a>)</span>, and can promote high species diversity in forest trees <span class="citation" data-cites="Clark2010">(Clark <a href="#ref-Clark2010" role="doc-biblioref">2010</a>)</span>. Another source of heterogeneity arises from large-scale differences in neighboring patches, often described by the metapopulation theory <span class="citation" data-cites="Levins1969">(Levins <a href="#ref-Levins1969" role="doc-biblioref">1969</a>)</span>. This theory posits that the dynamics of occupied and empty patches in a landscape are driven by colonization and extinction processes. This theory posits that the dynamics of occupied and empty patches in a landscape are driven by colonization and extinction processes. Building on this theory, <span class="citation" data-cites="Talluto2017">Talluto et al. (<a href="#ref-Talluto2017" role="doc-biblioref">2017</a>)</span> used patch variability to derive colonization and extinction rates of eastern North American trees, revealing their distribution to be out of equilibrium with climate. Therefore, while this result advances our understanding of the mechanisms governing large-scale tree distributions, there remains a need to reconcile it with local demographic dynamics, given that colonization and extinction processes ultimately manifest from demographic rates.</p>
+         <p>Theory predicts that the uncertainty arising from stochastic and heterogenous processes may lead to divergent outcomes in <span class="math inline">\(\lambda\)</span>. Demographic and environmental stochasticity may increase the uncertainty in <span class="math inline">\(\lambda\)</span>, consequently increasing the extinction risk, particularly for populations with low performance or low density <span class="citation" data-cites="Holt2005 Gravel2011">(Holt et al. <a href="#ref-Holt2005" role="doc-biblioref">2005</a>; Gravel, Guichard, and Hochberg <a href="#ref-Gravel2011" role="doc-biblioref">2011</a>)</span>. For instance, demographic stochasticity increased the extinction risk of European forest trees at the hot edge of their distribution <span class="citation" data-cites="Guyennon2023">(Guyennon et al. <a href="#ref-Guyennon2023" role="doc-biblioref">2023</a>)</span>. On the other hand, spatial heterogeneity has been described as a buffering process against the stochasticity in demographic rates, thereby increasing population persistence <span class="citation" data-cites="milles2023">(Milles et al. <a href="#ref-milles2023" role="doc-biblioref">2023</a>)</span>. This is particularly relevant in nonlinear models, where Jensen’s inequality predicts - for convex response functions - that higher demographic and environmental stochasticity increases the average population growth rate <span class="citation" data-cites="Koons2009">(Koons et al. <a href="#ref-Koons2009" role="doc-biblioref">2009</a>)</span>. Furthermore, demographic and environmental stochasticity influence abundance variation, indirectly impacting <span class="math inline">\(\lambda\)</span> through density-dependence <span class="citation" data-cites="May1978 Terry2022">(May et al. <a href="#ref-May1978" role="doc-biblioref">1978</a>; Terry, O’Sullivan, and Rossberg <a href="#ref-Terry2022" role="doc-biblioref">2022</a>)</span>. A comprehensive understanding of the response of forest trees to climate change requires incorporating the multiple sources of variability arising from spatio-temporal variation and parameter uncertainty.</p>
+         <p>Here, we use a stochastic Integral Projection Model (IPM) to predict species-level intrinsic population growth (<span class="math inline">\(\lambda\)</span>) for 31 eastern North American tree species. The IPM integrates the growth, survival, and recruitment demographic rates, which vary in response to climate and competition. By fitting each demographic rate using non-linear hierarchical Bayesian models, we capture parameter uncertainty at both the individual and local population scales. Additionally, our model naturally accommodates observed spatio-temporal stochasticity in climate and competition. Then, rather than ignoring these sources of variability, we embrace them into <span class="math inline">\(\lambda\)</span> by defining species performance through a probabilistic framework. Specifically, we introduce a novel metric called <strong>local suitable probability</strong>, derived from the average population growth rate and its associated variability. This metric determines the probability of a positive population growth rate for a species under specific climate and competition conditions.</p>
+         <p>Our analysis is as follows. First, we used the IPM to predict species-specific <span class="math inline">\(\lambda\)</span> at the plot level under two conditions: without (fundamental niche) and with (realized niche) heterospecific competition. By replicating this calculation 100 times across all observed plots from the same species, we can assess the variability of <span class="math inline">\(\lambda\)</span> arising from both spatio-temporal stochasticity in the climate and competition and model uncertainty. As this variable <span class="math inline">\(\lambda\)</span> changes across space, we used these observations to model how the species’ local suitable probability changes across the mean annual temperature. Specifically, we ask how climate and competition affect each species’ local suitable probability. Then, we investigated how a species’ local suitable probability changes from the center of its distribution toward the cold and hot borders. Finally, we disentangle the relative impacts of climate and competition in changing suitable probability from the center to the borders. We conclude by discussing a novel theory that uses the local suitable probability to establish a link between individual demographic rates and metapopulation dynamics.</p>
+         <h1 id="methods">Methods</h1>
+         <h2 id="population-model-demographic-components-and-uncertainty-structure">Population model, demographic components, and uncertainty structure</h2>
+         <p>We use an Integral Projection Model (IPM) to predict the intrinsic population growth rate (<span class="math inline">\(\lambda\)</span>) as a function of climate and competition. An IPM is a powerful modeling approach that allows a full representation of all sources of variability in demography. The IPM serves as a mathematical formulation describing the dynamics of a continuous trait distribution (<span class="math inline">\(z\)</span>) within a population over discrete time steps:</p>
+         <p><span id="eq:ipm" class="eqnos"><span class="math display">\[
+         n(z&#39;, t + 1) = \int_{L}^{U} \, K(z&#39;, z, X, \theta)\, n(z, t)\, \mathrm{d}z
+         \]</span><span class="eqnos-number">(1)</span></span></p>
+         <p>In our case, the trait <span class="math inline">\(z\)</span> is defined as the tree’s diameter at breast height (dbh), constrained between the limits <span class="math inline">\(L\)</span> and <span class="math inline">\(U\)</span>. The continuous distribution <span class="math inline">\(n(\cdot)\)</span> of dbh <span class="math inline">\(z\)</span> of a population at time <span class="math inline">\(t\)</span> transitions to the next time step using a projection kernel (<span class="math inline">\(K\)</span>). The kernel <span class="math inline">\(K\)</span>, with parameters <span class="math inline">\(\theta\)</span> and covariates <span class="math inline">\(X\)</span> that are time dependent, comprises three demographic submodels:</p>
+         <p><span id="eq:kernel" class="eqnos"><span class="math display">\[
+         k(z&#39;, z, \theta) = [Growth(z&#39;, z, X, \theta) \times Survival(z, X, \theta)] + Recruitment(z, X, \theta)
+         \]</span><span class="eqnos-number">(2)</span></span></p>
+         <p>The growth model assesses the probability of an individual of size <span class="math inline">\(z\)</span> at time <span class="math inline">\(t\)</span> transitioning to size <span class="math inline">\(z&#39;\)</span> at time <span class="math inline">\(t+1\)</span>. The survival model determines the probability of an individual with size <span class="math inline">\(z\)</span> at time <span class="math inline">\(t\)</span> surviving to the next time step. Lastly, the recruitment model determines the number of new individuals entering the population at each time step as a function of total density <span class="math inline">\(z\)</span>. The kernel <span class="math inline">\(K\)</span> has the same function of the population growth rate <span class="math inline">\(r\)</span> in a population model, where multiplying the population distribution <span class="math inline">\(n(z, t)\)</span> with <span class="math inline">\(K\)</span> gives the population distribution at the next time step <span class="math inline">\(n(z&#39;, t+1)\)</span>. Its advantage in propagating uncertainty is that, instead of having a matrix with fixed parameters determining the transition rate of population individuals over time, it uses a probability distribution with uncertainty derived from the demographic models to project individuals over time.</p>
+         <p>With the defined <span class="math inline">\(K\)</span>, we can estimate the intrinsic population growth rate for a determined set of conditions from the covariates <span class="math inline">\(X\)</span> and sampled parameters from the posterior distribution <span class="math inline">\(\theta\)</span>. Specifically, we discretize the continuous kernel <span class="math inline">\(K\)</span> using the mid-point rule <span class="citation" data-cites="Ellner2016">(Ellner, Childs, and Rees <a href="#ref-Ellner2016" role="doc-biblioref">2016</a>)</span> and estimate the intrinsic population growth rate using the dominant eigenvalue of the discretized <span class="math inline">\(K\)</span>. This approach is a local approximation of the population growth rate at the initial time steps.</p>
+         <p>A detailed description of the data and model development is available in Chapter 2. In summary, we evaluated non-linear statistical models to formulate the growth, survival, and recruitment components of the IPM, along with their uncertainty. Each demographic sub-model varies as a function of the mean annual temperature, mean annual precipitation, and stand basal area of larger individuals. Each model’s parameters (<span class="math inline">\(\theta\)</span>) are species-specific, as each model is fitted separately for each species. Both climate variables influence each demographic model through an unimodal link function, where each model exhibits an optimal climate and niche breadth for temperature and precipitation. Additionally, density dependence is integrated based on the plot’s total basal area of larger individuals. Stand density affects growth and survival through a linear model, in which two parameters determine the strength of interaction from conspecific and heterospecific (all species combined) competition. For the recruitment model, the annual ingrowth rate is modulated by conspecific stand basal area, using an unimodal function to account for both the positive effect of seed source and the negative effect of conspecific competition. Furthermore, the annual survival rate of potential ingrowth individuals decreases linearly with the stand density of heterospecific individuals. Finally, the intercept of each growth, survival, and recruitment model incorporates plot-level random effects to control for the variance shared within the plot-year observations.</p>
+         <!-- TODO maybe formalize the variability in equation is here -->
+         <p>We use two open inventory datasets from eastern North America: the Forest Inventory and Analysis (FIA) dataset in the United States <span class="citation" data-cites="OConnell2007">(O’Connell et al. <a href="#ref-OConnell2007" role="doc-biblioref">2007</a>)</span> and the permanent plots of forest inventory program for Québec <span class="citation" data-cites="Naturelles2016">(Ministere des Ressources Naturelles <a href="#ref-Naturelles2016" role="doc-biblioref">2016</a>)</span>. These inventories, with multiple individual measurements over time and space, allow us to use the transition information between measurement years for predicting growth, survival, and recruitment rates. We selected the 31 most abundant species, comprising 9 conifer species and 21 hardwood species, well-dispersed across shade tolerance and successional status (Supplementary Material 1). These species are well distributed across the eastern North American gradient and the sampling area covers cold and hot range limits for most species.</p>
+         <h2 id="extracting-local-suitability-probability">Extracting local suitability probability</h2>
+         <p>We estimate <span class="math inline">\(\lambda\)</span> at the local population scale, specifically at the plot level in our study. Within a given geographic location, such as a specific latitude where several plots are located, the variance of <span class="math inline">\(\lambda\)</span> among those plots arises from spatio-temporal variations in both climate and competition covariates. For instance, climate stochasticity introduces noise in annual temperature and precipitation, leading to environmental variation. Similarly, even with identical climate conditions, two locations can exhibit different community abundance and composition, resulting in variability in the strength of competition. Beyond these spatio-temporal environmentally-induced variations, <span class="math inline">\(\lambda\)</span> can still vary due to the other sources of uncertainty discussed above.</p>
+         <p>We track demographic model uncertainty at two complementary scales: individual and plot levels. At the individual level, plots with the same climate and competition conditions may have different <span class="math inline">\(\lambda\)</span> values due to the uncertainty in the demographic sub-models. Similarly, even with the same environmental conditions and averaged parameter values (eliminating demographic uncertainty at the individual level), two plots can still yield different <span class="math inline">\(\lambda\)</span> values due to the spatial uncertainty of each demographic model assigned among plots. Therefore, variability in the population growth rate can arise from spatio-temporal variations in both the environment and the parameters.</p>
+         <p>Given these different sources of variability in <span class="math inline">\(\lambda\)</span>, we define the suitable probability as the area under the distribution for <span class="math inline">\(\lambda \geq 1\)</span>. To estimate this, we first determine the cumulative distribution function, <span class="math inline">\(F(x)\)</span>, from the generic probability density function, <span class="math inline">\(\lambda = f(t)\)</span>, as follows:</p>
+         <p><span id="eq:cdf" class="eqnos"><span class="math display">\[
+         F_{\lambda}(x) = P(\lambda \le x) = \int_{-\infty}^{1} f(t)dt
+         \]</span><span class="eqnos-number">(3)</span></span></p>
+         <p>This function represents the cumulative distribution from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(x\)</span>. Subsequently, we define the suitable probability (<span class="math inline">\(\Lambda\)</span>) as the complement of the cumulative distribution function for <span class="math inline">\(x = 1\)</span>:</p>
+         <p><span id="eq:sp" class="eqnos"><span class="math display">\[
+           \Lambda = 1 - F_{\lambda}(1)
+         \]</span><span class="eqnos-number">(4)</span></span></p>
+         <h2 id="modeling-suitable-probability">Modeling suitable probability</h2>
+         <p>We can evaluate the suitable probability of a species at various scales, ranging from a single local plot up to several plots in a region. At the plot level, sources of variability in <span class="math inline">\(\lambda\)</span> stem from parameter uncertainty, individual heterogeneity, and temporal variability in climate and competition. When considering multiple plots simultaneously, we can additionally account for spatial variability in climate and competition, along with spatial uncertainty in plot-level parameters.</p>
+         <p>Apart from parameter uncertainty at the individual level, all other sources of variability exhibit spatial dependence. This implies that environmental variability (from climate, competition, or both) and parameter uncertainty at the plot level can vary based on their spatial location. For instance, plots at the border of the species distribution may experience more temperature variability than those at the center. Additionally, plot-level parameter uncertainty can be spatially clustered, capturing potential features of demographic variability beyond the climatic and competition covariates, such as historical factors or local edaphic conditions.</p>
+         <p>Given that variability can be spatially dependent, we can model how suitable probability changes across the species’ range distribution, considering both fixed climate and competition effects and the underlying spatio-temporal variability. We are particularly interested in how suitable probability changes from the center toward the cold and hot ranges. For that, we categorized all species’ plot-year observations based on the gradient of mean annual temperature (MAT), divided into cold and hot ranges using the MAT centroid among all plots for the species (<span class="math inline">\(\frac{max(MAT) + min(MAT)}{2}\)</span>). For instance, if a species is observed within the 4-10°C gradient of MAT, the plots with MAT below 7°C are classified as cold, while the others are classified as hot. We chose to use MAT instead of latitude because we are interested in the species’ climatic niche, although the two variables are highly correlated.</p>
+         <p>We assessed suitable probability separately for the cold and hot ranges, employing a linear model to determine the relationship between <span class="math inline">\(\lambda\)</span> and MAT. The spatio-temporal variability of <span class="math inline">\(\lambda\)</span> arising from environmental stochasticity and parameter uncertainty influences the variance of the linear model. As this variance may change depending on the range position, we introduce a submodel for the variance of the linear model to be dependent on MAT. To accommodate potential asymmetry in this variance, we use a Skew Normal Distribution (<span class="math inline">\(SN\)</span>) incorporating an additional parameter (<span class="math inline">\(\alpha\)</span>) that can introduce right or left-skewed tails to the variance:</p>
+         <p><span id="eq:metamodel" class="eqnos"><span class="math display">\[
+         \begin{split}
+         &amp;log(\lambda) \sim SN(\xi, \omega, \alpha) \\[2pt]
+         &amp;\xi = \beta_{1, \xi} \times MAT + \beta_{0, \xi} \\[2pt]
+         &amp;\omega = e^{\beta_{1, \omega} \times MAT + \beta_{0, \omega}}
+         \end{split}
+         \]</span><span class="eqnos-number">(5)</span></span> </p>
+         <p>Here, <span class="math inline">\(\xi\)</span> is the location parameter or the <span class="math inline">\(\lambda\)</span> average, and <span class="math inline">\(\omega\)</span> is the scale representing the variance around the mean.</p>
+         <h3 id="simulations">Simulations</h3>
+         <p>We computed <span class="math inline">\(\lambda\)</span> for each species based on the plot-year observations in the dataset, considering both environmentally induced variability and parameter uncertainty. For every observed species-plot-year combination, we incorporated temporal stochasticity in climate conditions by using the mean and standard deviation of mean annual temperature and precipitation calculated from the years between measurements. For instance, in the case of a plot observed twice, we calculated <span class="math inline">\(\lambda\)</span> for the second observation with climate conditions drawn randomly from a normal distribution with mean and standard deviation defined from climate observations within the year interval. Similarly, temporal stochasticity in competition arises from variation in abundance and composition between measured years. By iteratively performing this calculation, drawing parameter values randomly from the posterior distribution, we introduced demographic uncertainty at the individual level. For each species-plot-year measurement, we replicated the calculation of <span class="math inline">\(\lambda\)</span> 100 times. By applying this approach across all plots, we naturally incorporate spatial variation in climate and competition conditions and spatial uncertainty in plot-level parameters.</p>
+         <p>For each species-plot-year-replication combination, we calculated <span class="math inline">\(\lambda\)</span> under two simulated conditions. The first scenario excludes competition in order to evaluate the fundamental niche, with heterospecific competition set at zero and conspecific total population size (N) set at 0.1. This simulation is used to assess the fundamental niche. The second scenario is used to evaluate the invasion growth rate with residents (the realized niche), with an evaluation of the population growth rate when the focal species is rare (<span class="math inline">\(N=0.1\)</span>) and heterospecific competition is set to the observed abundance of the competitive species. This condition simulated the population growth rate under the realized niche.</p>
+         <p>We then fitted a linear model of <span class="math inline">\(\lambda\)</span> for each species-plot-year-replication as a function of the mean annual temperature gradient. Species-specific linear models were evaluated for the hot and cold ranges using the Hamiltonian Monte Carlo (HMC) algorithm via the Stan software <span class="citation" data-cites="stan2022stan">(version 2.30.1 Team and Others <a href="#ref-stan2022stan" role="doc-biblioref">2022</a>)</span> and the <code>cmdstandr</code> R package <span class="citation" data-cites="cmdstanr">(version 0.5.3 Gabry, Češnovar, and Johnson <a href="#ref-cmdstanr" role="doc-biblioref">2023</a>)</span>. We used a sample of 5000 plots for each species to fit the model. This sample was necessary only for 6 out of the 31 species.</p>
+         <p>We leveraged the posterior distribution to estimate the suitable probability of a species for any value of MAT under fundamental or realized niches for the cold and hot ranges. Specifically, we estimated suitable probability under four different MAT conditions encountered by the species: at the border and the center of each cold and hot range. We defined the border of the cold range as the minimum observed MAT for the focal species in the dataset, while the hot range was defined as the maximum observed MAT. The center location is defined as the centroid of MAT for the focal species. Although the center location has the same MAT for the cold and hot ranges, both are retained because the model is fitted separately for the cold and hot ranges. Finally, we estimated suitable probability for each location under no competition (fundamental niche) and heterospecific competition (realized niche) conditions, using the empirical cumulative distribution function over 1000 predictive draws.</p>
+         <p>The code for the computation of each plot-year <span class="math inline">\(\lambda\)</span> is available at <a href="https://github.com/willvieira/forest-IPM/tree/master/simulations/lambda_plot">https://github.com/willvieira/forest-IPM/tree/master/simulations/lambda_plot</a>, and the code to model the linear model is at <a href="https://github.com/willvieira/forest-IPM/tree/master/simulations/model_lambdaPlot/">https://github.com/willvieira/forest-IPM/tree/master/simulations/model_lambdaPlot/</a>.</p>
+         <h1 id="results">Results</h1>
+         <h3 id="model-fit">Model fit</h3>
+         <p>We first analyzed how the local population growth rate (<span class="math inline">\(\lambda\)</span>) and its variability change across the cold and hot ranges (Equation <a href="#eq:metamodel">5</a>). An example is provided at Figure <a href="#fig:res_example">1</a> with the observed distribution of <span class="math inline">\(\lambda\)</span> and the fit of the underlying model on the mean annual temperature gradient for balsam fir, <em>Abies balsamea</em>. Each point represents a plot-year-replication encompassing the complete spatio-temporal sources of variability arising from the stochastic environment and parameter uncertainty. The black line represents the fitted model of how <span class="math inline">\(\lambda\)</span> changes with MAT, and the envelopes depict the 90th quantiles of model distribution. From this uncertainty, we can deduce the suitable probability. This example shows that the mean and variance of <span class="math inline">\(\lambda\)</span> decrease towards the cold border, while it does not vary much towards the hot border. By comparing the model under heterospecific competition with that without competition for the cold range, we observed that while their average is similar, the uncertainty of the model under heterospecific competition shifted downwards (Figure <a href="#fig:res_example">1</a>, bottom left).</p>
+         <div id="fig:res_example" class="fignos">
+         <figure>
+         <img src="https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-res_example-1.png" data-short-caption="Distribution of stochastic population growth rate ($\lambda$) for *Abies balsamea* over the mean annual temperature gradient for different conditions." style="width:100.0%" alt="Figure 1: Distribution of stochastic population growth rate (\lambda) for Abies balsamea over the mean annual temperature gradient for cold (left panels) and hot (right panels) ranges under no competition (fundamental niche) and heterospecific competition (realized niche). The dots represent \lambda over the plot-year-replication combinations. The model’s average line and 90% prediction intervals are estimated using 500 draws from the posterior distribution." /><figcaption aria-hidden="true"><span>Figure 1:</span> Distribution of stochastic population growth rate (<span class="math inline">\(\lambda\)</span>) for <em>Abies balsamea</em> over the mean annual temperature gradient for cold (left panels) and hot (right panels) ranges under no competition (fundamental niche) and heterospecific competition (realized niche). The dots represent <span class="math inline">\(\lambda\)</span> over the plot-year-replication combinations. The model’s average line and 90% prediction intervals are estimated using 500 draws from the posterior distribution.</figcaption>
+         </figure>
+         </div>
+         <p>We then investigated the local suitability probability using the empirical cumulative distribution approach (Equation <a href="#eq:sp">4</a>) from the linear model predictions. The Figure <a href="#fig:sp-example">2</a> shows the suitable probability expected over the mean annual temperature of the same species. We observed that the local suitability probability was reduced towards the cold border, with a stronger reduction under heterospecific competition (yellow curve). We can also observe that the decrease in suitable probability towards the border is nonlinear, becoming more substantial for heterospecific competition than for the no-competition condition.</p>
+         <p>The model fit and the estimation of suitable probability across the temperature gradient for all species are presented in Supplementary Material 2. We observed for most species a decrease of the climate effect at one border while the other remained unchanged. Additionally, a few species displayed a clear linear pattern of decreasing suitable probability from the cold to the hot border, with only one species (<em>Betula papyrifera</em>) having a decrease at both borders. Conversely, under the competition effect, most species exhibited a decrease in suitable probability at the hot border and an increase at the cold border, indicating a linear rise in the impact of competition from the cold to the hot border of the distribution.</p>
+         <div id="fig:sp-example" class="fignos">
+         <figure>
+         <img src="https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-sp-example-1.png" data-short-caption="Suitable probability of *Abies balsamea* over the mean annual temperature gradient for cold and hot ranges under no competition (green) and heterospecific (yellow)." style="width:100.0%" alt="Figure 2: Suitable probability of Abies balsamea over the mean annual temperature gradient for cold and hot ranges under no competition (green) and heterospecific (yellow). The vertical dotted line represents the range limits of the MAT observed in the dataset." /><figcaption aria-hidden="true"><span>Figure 2:</span> Suitable probability of <em>Abies balsamea</em> over the mean annual temperature gradient for cold and hot ranges under no competition (green) and heterospecific (yellow). The vertical dotted line represents the range limits of the MAT observed in the dataset.</figcaption>
+         </figure>
+         </div>
+         <h3 id="effect-of-climate-and-competition-on-suitable-probability-for-the-center-and-border-distributions">Effect of climate and competition on suitable probability for the center and border distributions</h3>
+         <p>We investigated the effect of climate and competition on the suitable probability at the border and center of the temperature range distribution for all species. Because the border and center positions are relative to each species, we could not represent the continuous trend in suitable probability across the MAT for all 31 species together. Instead, we extracted the local suitable probability with and without heterospecific competition for four locations across the MAT gradient (Figure <a href="#fig:sp_comp_vs_nocomp2">3</a>). Overall, suitable probability was high among the species, with an average of 0.78. Among the four locations, species presented a lower suitable probability at the border of the hot range, with an average of 0.67. Across the temperature range, there is a monotonic decrease in suitable probability from the cold border toward the hot border.</p>
+         <div id="fig:sp_comp_vs_nocomp2" class="fignos">
+         <figure>
+         <img src="https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-sp_comp_vs_nocomp2-1.png" data-short-caption="Estimated suitable probability for the 31 forest species across across the center and border of the cold and hot ranges." style="width:100.0%" alt="Figure 3: Estimated suitable probability for the 31 forest species across across the center and border of the cold and hot ranges. The x-axis represents the mean annual temperature gradient similar to Figure 2, but is discretized at the border and center limits relative to each species. We highlighted the balsam fir species in red. Note that we omitted the parameter uncertainty of each species in this figure to avoid overlap and increase clarity." /><figcaption aria-hidden="true"><span>Figure 3:</span> Estimated suitable probability for the 31 forest species across across the center and border of the cold and hot ranges. The x-axis represents the mean annual temperature gradient similar to Figure <a href="#fig:sp-example">2</a>, but is discretized at the border and center limits relative to each species. We highlighted the balsam fir species in red. Note that we omitted the parameter uncertainty of each species in this figure to avoid overlap and increase clarity.</figcaption>
+         </figure>
+         </div>
+         <p>We further disentangle the influence of competition from that of climate by calculating the difference between suitable probability under heterospecific competition and without competition. A negative difference signifies competition reduces suitable probability, while positive differences indicate an increase. Across the four climate locations, heterospecific competition consistently reduced suitable probability for most species, with the magnitude of reduction intensifying from the cold to the hot border (Figure S1). This suggests that the decline in suitable probability observed from the cold to the hot border (Figure <a href="#fig:sp_comp_vs_nocomp2">3</a>) results from the combined effect of climate and competition.</p>
+         <h3 id="suitable-probability-change-from-center-to-border">Suitable probability change from center to border</h3>
+         <p>We investigated the relative effect of climate and competition on changing suitable probability from the center to the border of the species distribution (Figure <a href="#fig:diff_sp_hist">4</a>). A positive relative difference indicates an increase in suitable probability from the center towards the border, while a negative difference indicates a decrease. Most species exhibited a decrease in suitable probability at the hot border relative to the center. Alternatively, most species showed a reduction in the effect of competition toward the cold border. However, the climate effect in the cold range was more variable, with some species experiencing an increase and others a decrease in suitable probability. Overall, the relative difference in suitable probability from the center toward the cold and hot borders was more influenced by climate rather than competition.</p>
+         <div id="fig:diff_sp_hist" class="fignos">
+         <figure>
+         <img src="https://willvieira.github.io/book_forest-demography-IPM/extinction_risk_files/figure-html/fig-diff_sp_hist-1.png" data-short-caption="Difference in suitable probability for climate and competition effects over the cold and hot ranges." style="width:100.0%" alt="Figure 4: Difference in suitable probability for climate and competition effects over the cold and hot ranges. Negative values denote a decrease in species suitable probability from the center towards the distribution border, while positive values indicate an increase. Specifically, a negative value for climate at the hot (or cold) range signifies a reduction in suitable probability as temperature rises (or falls) towards the border. Boxplots determine the 25-75 quantile distribution among the species." /><figcaption aria-hidden="true"><span>Figure 4:</span> Difference in suitable probability for climate and competition effects over the cold and hot ranges. Negative values denote a decrease in species suitable probability from the center towards the distribution border, while positive values indicate an increase. Specifically, a negative value for climate at the hot (or cold) range signifies a reduction in suitable probability as temperature rises (or falls) towards the border. Boxplots determine the 25-75 quantile distribution among the species.</figcaption>
+         </figure>
+         </div>
+         <h1 id="discussion">Discussion</h1>
+         <p>Understanding the mechanisms shaping species distribution is imperative to face ongoing global changes. We acknowledged and integrated various sources of variability in the population growth rate of forest trees, contributing to an improved understanding of forest dynamics in an uncertain world. Introducing a novel metric, we quantified the relative impacts of climate and competition on the change in suitable probability across species distributions. Our findings revealed a nearly linear reduction in suitable probability from the cold to hot borders. Notably, the predominant influence on the relative difference in suitable probability from the center toward the border was attributed to climate rather than competition. These results, supported by a novel approach accounting for uncertainty, enhance our understanding of the nuanced interplay between climate and competition across species ranges.</p>
+         <p>The suitable probability was high across all species and range locations, with only around 5% of all species-location combinations having a suitable probability below the 0.5 threshold. This is primarily attributed to most species exhibiting a high positive population growth rate across their current range distribution. Additionally, the spatio-temporal variability in the environment and the parameter uncertainty in the plot may contribute to the elevated average population growth rate due to nonlinear averaging. This aligns with theoretical <span class="citation" data-cites="Schreiber2009">(Schreiber and Lloyd-Smith <a href="#ref-Schreiber2009" role="doc-biblioref">2009</a>)</span> and empirical <span class="citation" data-cites="Crone2016">(Crone <a href="#ref-Crone2016" role="doc-biblioref">2016</a>)</span> studies suggesting that spatial heterogeneity should increase the population growth rate.</p>
+         <p>Competition significantly reduces local suitability across all range locations, with a stronger and more consistent effect at the cold border, contributing to the ongoing debate surrounding its significance in setting range limits. Despite several studies emphasizing the effect of competition compared to climate on the demographic rates of forest trees <span class="citation" data-cites="Zhang2015 Kaber2021 LeSquin2021">(Zhang, Huang, and He <a href="#ref-Zhang2015" role="doc-biblioref">2015</a>; Käber et al. <a href="#ref-Kaber2021" role="doc-biblioref">2021</a>; Le Squin, Boulangeat, and Gravel <a href="#ref-LeSquin2021" role="doc-biblioref">2021</a>)</span>, debates persist regarding whether this effect at the local scale translates to the biogeographic distribution of species <span class="citation" data-cites="Soberon2007 CopenhaverParry2017">(Sober’on <a href="#ref-Soberon2007" role="doc-biblioref">2007</a>; Copenhaver-Parry, Shuman, and Tinker <a href="#ref-CopenhaverParry2017" role="doc-biblioref">2017</a>)</span>. Our findings support the <span class="citation" data-cites="Godsoe2017">Godsoe et al. (<a href="#ref-Godsoe2017" role="doc-biblioref">2017</a>)</span> hypothesis and a growing body of evidence <span class="citation" data-cites="Scherrer2020 Shi2020 Paquette2021 Lyu2022">(Scherrer et al. <a href="#ref-Scherrer2020" role="doc-biblioref">2020</a>; Shi et al. <a href="#ref-Shi2020" role="doc-biblioref">2020</a>; Paquette and Hargreaves <a href="#ref-Paquette2021" role="doc-biblioref">2021</a>; Lyu and Alexander <a href="#ref-Lyu2022" role="doc-biblioref">2022</a>)</span> showing that the effect of competition on the intrinsic population growth rate can indeed contribute to range limits.</p>
+         <p>The decline in suitable probability from the cold to the hot border suggests a predominantly linear, rather than unimodal, relationship with temperature for most species. This result is consistent with reduced population growth rates in North American <span class="citation" data-cites="schultz2022 LeSquin2021">(Schultz et al. <a href="#ref-schultz2022" role="doc-biblioref">2022</a>; Le Squin, Boulangeat, and Gravel <a href="#ref-LeSquin2021" role="doc-biblioref">2021</a>)</span> and European <span class="citation" data-cites="Guyennon2023">(Guyennon et al. <a href="#ref-Guyennon2023" role="doc-biblioref">2023</a>)</span> forest trees, except for the contrasting pattern observation by <span class="citation" data-cites="Purves2009">Purves (<a href="#ref-Purves2009" role="doc-biblioref">2009</a>)</span>. The higher suitable probability in the cold range compared to the hot range could be attributed to multiple factors. First, species may still follow their climate niche post the last glaciation, explaining why the current cold range limit does not align with the expected niche distribution <span class="citation" data-cites="Svenning2007">(Svenning and Skov <a href="#ref-Svenning2007" role="doc-biblioref">2007</a>)</span>, potentially leading to a colonization debt <span class="citation" data-cites="Talluto2017">(Talluto et al. <a href="#ref-Talluto2017" role="doc-biblioref">2017</a>)</span>. Notably, four of the six species exhibiting a significant decrease in suitable probability from the center toward the cold range were already at the extreme cold observed in the dataset (Figure S4).</p>
+         <p>Our model may however overlook crucial drivers of species performance, despite capturing a substantial amount of variation from parameter uncertainty at the plot level. Factors such as the impact of extreme temperature and precipitation on phenology can influence tree range limits <span class="citation" data-cites="Morin2007">(Morin, Augspurger, and Chuine <a href="#ref-Morin2007" role="doc-biblioref">2007</a>)</span>. Beyond covariates and plot-level uncertainty, incorporating temporal uncertainty at the plot level, accounting for spatio-temporal covariance, could likely capture additional sources of variation in demographic rates. While our approach considers temporal stochasticity in climate and competition, which affect species range size <span class="citation" data-cites="Holt2022">(Holt, Barfield, and Peniston <a href="#ref-Holt2022" role="doc-biblioref">2022</a>)</span>, there remains temporal variation in demographic rates beyond these covariates. This variability, possibly captured with random effects at the plot level, can influence range limits based on the degree of temporal autocorrelation and its relationship with the range <span class="citation" data-cites="Benning2022">(Benning, Hufbauer, and Weiss-Lehman <a href="#ref-Benning2022" role="doc-biblioref">2022</a>)</span>. For instance, an empirical study on perennial herbaceous species demonstrated that temporal environmental stochasticity reduced the population growth rate relative to the average <span class="citation" data-cites="Crone2016">(Crone <a href="#ref-Crone2016" role="doc-biblioref">2016</a>)</span>. In our study, this temporal variability is particularly relevant for survival (due to disturbance) and recruitment (due to phenology) rates because, in addition to having high temporal variability <span class="citation" data-cites="Clark1999a Leite2023">(Clark et al. <a href="#ref-Clark1999a" role="doc-biblioref">1999</a>; de Souza Leite et al. <a href="#ref-Leite2023" role="doc-biblioref">2023</a>)</span>, they represent the most significant drivers of population growth rate (Chapter 2).</p>
+         <p>The effect of competition, similar to climate, increased from the center towards the border of the hot range, contrary to <span class="citation" data-cites="Kunstler2021">Kunstler et al. (<a href="#ref-Kunstler2021" role="doc-biblioref">2021</a>)</span>, who found no difference in the competition effect between the center and border of the species. Additionally, our results deviate from the Species Interactions-Abiotic Stress Hypothesis, predicting a stronger competition effect in less stressful climate conditions <span class="citation" data-cites="Louthan2015">(Louthan, Doak, and Angert <a href="#ref-Louthan2015" role="doc-biblioref">2015</a>)</span>. When considering the relative position of the species across the temperature gradient, only the effect of climate at the cold range changed with temperature. This indicates that most species have a similar or higher suitable probability at the border of the cold range compared to their center distribution. We further tested whether the species’ range size affects the relative difference in suitable probability; while the absolute values change, the pattern among the species remains unchanged.</p>
+         <p>The climate gradient of temperature had a more significant effect than competition in changing the suitable probability of forest trees. This means that mean annual temperature, along with all latent variables, better explains how suitable probability changes across the temperature range. The choice of using only mean annual temperature as an explanatory variable for the variance of <span class="math inline">\(\lambda\)</span> can be improved. For instance, the model could be built accounting for mean annual temperature and precipitation to predict the complete two-dimensional distribution of the species’ climate niche. Plot random effects could be further used to account for the nestedness of the data design, allowing the proper separation of the total variance of the metamodel into variance arising from individual- and plot-level demographic uncertainty. While we have assumed climate variability as independent and identically distributed random variables, this assumption can be relaxed to include temporal autocorrelation. Autocorrelated environmental fluctuation can significantly change a species’ range limits due to nonlinear averaging <span class="citation" data-cites="Benning2022 Holt2022">(Benning, Hufbauer, and Weiss-Lehman <a href="#ref-Benning2022" role="doc-biblioref">2022</a>; Holt, Barfield, and Peniston <a href="#ref-Holt2022" role="doc-biblioref">2022</a>)</span>. Lastly, although coexistence theory assumes the abundance of competitors to be at equilibrium <span class="citation" data-cites="Chesson2000a">(Chesson <a href="#ref-Chesson2000a" role="doc-biblioref">2000</a>)</span>, testing this assumption remains practically impossible.</p>
+         <p>Despite the many ways of improving our study, there is a growing body of evidence indicating a mismatch between performance and occurrence <span class="citation" data-cites="McGill2012 Thuiller2014 Csergo2017 bohner2020 LeSquin2021 Midolo2021 Guyennon2023">(McGill <a href="#ref-McGill2012" role="doc-biblioref">2012</a>; Thuiller et al. <a href="#ref-Thuiller2014" role="doc-biblioref">2014</a>; Csergo et al. <a href="#ref-Csergo2017" role="doc-biblioref">2017</a>; Bohner and Diez <a href="#ref-bohner2020" role="doc-biblioref">2020</a>; Le Squin, Boulangeat, and Gravel <a href="#ref-LeSquin2021" role="doc-biblioref">2021</a>; Midolo, Wellstein, and Faurby <a href="#ref-Midolo2021" role="doc-biblioref">2021</a>; Guyennon et al. <a href="#ref-Guyennon2023" role="doc-biblioref">2023</a>)</span>. Our approach can better capture the nuanced effect of climate and competition along with the spatio-temporal variation in <span class="math inline">\(\lambda\)</span>, yet it was not enough to fully predict tree range limits. Since species distribution is influenced by processes at multiple scales <span class="citation" data-cites="McGill2010 Heffernan2014">(McGill <a href="#ref-McGill2010" role="doc-biblioref">2010</a>; Heffernan et al. <a href="#ref-Heffernan2014" role="doc-biblioref">2014</a>)</span>, it is challenging to rely on a single individual-level performance metric to predict it all <span class="citation" data-cites="Evans2016">(Evans et al. <a href="#ref-Evans2016" role="doc-biblioref">2016</a>)</span>. For instance, dispersion plays a crucial role in changing species distribution at larger spatial scales, either reducing its extent due to limited dispersal or increasing it through source-sink dynamics <span class="citation" data-cites="Pulliam2000">(Pulliam <a href="#ref-Pulliam2000" role="doc-biblioref">2000</a>)</span>. We propose that our novel metric, local suitable probability, can be a key unifying factor linking local and landscape scales.</p>
+         <p>Forest trees exhibit variation in their frequency of occurrence across distribution gradients, yet their relative abundance remains consistent when present <span class="citation" data-cites="Canham2010">(Canham and Thomas <a href="#ref-Canham2010" role="doc-biblioref">2010</a>)</span>. Such observation implies that assessing forest distribution should focus on colonization and extinction patch dynamics rather than local performance <span class="citation" data-cites="Canham2017">(Canham and Murphy <a href="#ref-Canham2017" role="doc-biblioref">2017</a>)</span>. However, instead of restricting models to either local or large scales, we propose using the local suitable probability to reconcile the local demographic dynamics with the metapopulation theory. Colonization and extinction processes, as described by metapopulation theory <span class="citation" data-cites="Levins1969">(Levins <a href="#ref-Levins1969" role="doc-biblioref">1969</a>)</span>, are well-suited for describing the mosaic of forest successional stages at the landscape scale resulting from natural disturbances and succession. However, an implicit assumption is that unoccupied patches are necessarily available for colonization. We relax this assumption and quantify patch availability using the local suitable probability metric (<span class="math inline">\(\Lambda\)</span>). Take an ensable of patches (<span class="math inline">\(p\)</span>) where individuals can arrive and establish empty patches through colonization (<span class="math inline">\(\alpha\)</span>), and occupied patches can become empty through extinction (<span class="math inline">\(\varepsilon\)</span>): Considering an ensemble of patches (<span class="math inline">\(p\)</span>) where individuals can arrive and establish in empty patches through colonization (<span class="math inline">\(\alpha\)</span>), and occupied patches can become empty through extinction (<span class="math inline">\(\varepsilon\)</span>), the integrated metapopulation model becomes:</p>
+         <p><span class="math display">\[
+         \frac{dp}{dt} = \alpha p (\Lambda - p) - \varepsilon p
+         \]</span></p>
+         <p>With this formulation, rather than having <span class="math inline">\(1 - p\)</span> available patches for colonization, we have <span class="math inline">\(\Lambda - p\)</span>. Therefore, when <span class="math inline">\(\lambda\)</span> and its variability are high, the local suitable probability equals 1, indicating that all non-occupied patches are available. Conversely, as the local suitable probability decreases, the proportion of non-occupied patches available for colonization is reduced. This integrative approach allows one to account for both the local (e.g. competition and climate) and landscape (e.g. fire disturbances and dispersal) drivers of forest dynamics when assessing tree distribution.</p>
+         <h1 class="unnumbered" id="references">References</h1>
+         <div id="refs" class="references hanging-indent" role="doc-bibliography">
+         <div id="ref-Benning2022">
+         <p>Benning, John W., Ruth A. Hufbauer, and Christopher Weiss-Lehman. 2022. “Increasing temporal variance leads to stable species range limits.” <em>Proceedings of the Royal Society B: Biological Sciences</em> 289 (1974). <a href="https://doi.org/10.1098/rspb.2022.0202">https://doi.org/10.1098/rspb.2022.0202</a>.</p>
+         </div>
+         <div id="ref-bohner2020">
+         <p>Bohner, Teresa, and Jeffrey Diez. 2020. “Extensive mismatches between species distributions and performance and their relationship to functional traits.” <em>Ecology Letters</em> 23 (1): 33–44.</p>
+         </div>
+         <div id="ref-Canham2017">
+         <p>Canham, Charles D., and Lora Murphy. 2017. “The demography of tree species response to climate: Sapling and canopy tree survival.” <em>Ecosphere</em> 8 (2). <a href="https://doi.org/10.1002/ecs2.1701">https://doi.org/10.1002/ecs2.1701</a>.</p>
+         </div>
+         <div id="ref-Canham2010">
+         <p>Canham, Charles D, and R Quinn Thomas. 2010. “Frequncy, not relative abundance, of temperate tree species varies along climate gradients in eastern North America.” <em>Ecology</em> 91 (12): 3433–40. <a href="https://doi.org/10.1890/10-0312.1">https://doi.org/10.1890/10-0312.1</a>.</p>
+         </div>
+         <div id="ref-Caswell2009">
+         <p>Caswell, Hal. 2009. “Stage, age and individual stochasticity in demography.” <em>Oikos</em> 118 (12): 1763–82. <a href="https://doi.org/https://doi.org/10.1111/j.1600-0706.2009.17620.x">https://doi.org/https://doi.org/10.1111/j.1600-0706.2009.17620.x</a>.</p>
+         </div>
+         <div id="ref-Chesson2000a">
+         <p>Chesson, Peter. 2000. “Mechanisms of maintenance of species diversity.” <em>Annu. Rev. Ecol. Syst</em> 31: 343–66. <a href="https://doi.org/10.1146/annurev.ecolsys.31.1.343">https://doi.org/10.1146/annurev.ecolsys.31.1.343</a>.</p>
+         </div>
+         <div id="ref-Clark2010">
+         <p>Clark, James S. 2010. “Individuals and the variation needed for high species diversity in forest trees.” <em>Science</em> 327 (5969): 1129–32. <a href="https://doi.org/10.1126/science.1183506">https://doi.org/10.1126/science.1183506</a>.</p>
+         </div>
+         <div id="ref-Clark1999a">
+         <p>Clark, J. S., B. Beckage, P. Camill, B. Cleveland, J. HilleRisLambers, J. Lichter, J. McLachlan, J. Mohan, and P. Wyckoff. 1999. “Interpreting recruitment limitation in forests.” <em>American Journal of Botany</em> 86 (1): 1–16. <a href="https://doi.org/10.2307/2656950">https://doi.org/10.2307/2656950</a>.</p>
+         </div>
+         <div id="ref-CopenhaverParry2017">
+         <p>Copenhaver-Parry, Paige E., Bryan N. Shuman, and Daniel B. Tinker. 2017. “Toward an improved conceptual understanding of North American tree species distributions.” <em>Ecosphere</em> 8 (6): e01853. <a href="https://doi.org/10.1002/ecs2.1853">https://doi.org/10.1002/ecs2.1853</a>.</p>
+         </div>
+         <div id="ref-Cressie2009">
+         <p>Cressie, Noel, Catherine A. Calder, James S. Clark, Jay M. Ver Hoef, and Christopher K. Wikle. 2009. “Accounting for uncertainty in ecological analysis: The strengths and limitations of hierarchical statistical modeling.” <em>Ecological Applications</em> 19 (3): 553–70. <a href="https://doi.org/10.1890/07-0744.1">https://doi.org/10.1890/07-0744.1</a>.</p>
+         </div>
+         <div id="ref-Crone2016">
+         <p>Crone, Elizabeth E. 2016. “Contrasting effects of spatial heterogeneity and environmental stochasticity on population dynamics of a perennial wildflower.” <em>Journal of Ecology</em> 104 (2): 281–91. <a href="https://doi.org/10.1111/1365-2745.12500">https://doi.org/10.1111/1365-2745.12500</a>.</p>
+         </div>
+         <div id="ref-Csergo2017">
+         <p>Csergo, Anna M., Roberto Salguero-G’omez, Olivier Broennimann, Shaun R. Coutts, Antoine Guisan, Amy L. Angert, Erik Welk, et al. 2017. “Less favourable climates constrain demographic strategies in plants.” <em>Ecology Letters</em>. <a href="https://doi.org/10.1111/ele.12794">https://doi.org/10.1111/ele.12794</a>.</p>
+         </div>
+         <div id="ref-Damgaard2020">
+         <p>Damgaard, Christian. 2020. “Measurement Uncertainty in Ecological and Environmental Models.” <em>Trends in Ecology and Evolution</em> 35 (10): 871–73. <a href="https://doi.org/10.1016/j.tree.2020.07.003">https://doi.org/10.1016/j.tree.2020.07.003</a>.</p>
+         </div>
+         <div id="ref-Leite2023">
+         <p>de Souza Leite, Melina, Sean M. McMahon, Paulo In’acio Prado, Stuart J. Davies, Alexandre Adalardo de Oliveira, Hannes P. De Deurwaerder, Salom’on Aguilar, et al. 2023. “Major axes of variation in tree demography across global forests.” <em>bioRxiv</em>. <a href="https://www.biorxiv.org/content/10.1101/2023.01.11.523538v2.abstract">https://www.biorxiv.org/content/10.1101/2023.01.11.523538v2.abstract</a>.</p>
+         </div>
+         <div id="ref-Ellner2016">
+         <p>Ellner, Stephen P, Dylan Z Childs, and Mark Rees. 2016. <em>Data-driven modelling of structured populations</em>. Springer.</p>
+         </div>
+         <div id="ref-Ettinger2017">
+         <p>Ettinger, Ailene, and Janneke HilleRisLambers. 2017. “Competition and facilitation may lead to asymmetric range shift dynamics with climate change.” <em>Global Change Biology</em> 23 (9): 3921–33. <a href="https://doi.org/10.1111/gcb.13649">https://doi.org/10.1111/gcb.13649</a>.</p>
+         </div>
+         <div id="ref-Evans2016">
+         <p>Evans, Margaret E K, Cory Merow, Sydne Record, Sean M. McMahon, and Brian J. Enquist. 2016. “Towards Process-based Range Modeling of Many Species.” <em>Trends in Ecology and Evolution</em> 31 (11): 860–71. <a href="https://doi.org/10.1016/j.tree.2016.08.005">https://doi.org/10.1016/j.tree.2016.08.005</a>.</p>
+         </div>
+         <div id="ref-cmdstanr">
+         <p>Gabry, Jonah, Rok Češnovar, and Andrew Johnson. 2023. <em>cmdstanr: R Interface to ’CmdStan’</em>.</p>
+         </div>
+         <div id="ref-Godsoe2017">
+         <p>Godsoe, William, Jill Jankowski, Robert D Holt, and Dominique Gravel. 2017. “Integrating Biogeography with Contemporary Niche Theory.” <em>Trends in Ecology and Evolution</em> 32 (7): 488–99. <a href="https://doi.org/10.1016/j.tree.2017.03.008">https://doi.org/10.1016/j.tree.2017.03.008</a>.</p>
+         </div>
+         <div id="ref-Gravel2011">
+         <p>Gravel, Dominique, Fr’ed’eric Guichard, and Michael E Hochberg. 2011. “Species coexistence in a variable world.” <em>Ecology Letters</em> 14 (8): 828–39. <a href="https://doi.org/10.1111/j.1461-0248.2011.01643.x">https://doi.org/10.1111/j.1461-0248.2011.01643.x</a>.</p>
+         </div>
+         <div id="ref-Guyennon2023">
+         <p>Guyennon, Arnaud, Björn Reineking, Roberto Salguero-Gomez, Jonas Dahlgren, Aleksi Lehtonen, Sophia Ratcliffe, Paloma Ruiz-Benito, Miguel A Zavala, and Georges Kunstler. 2023. “Beyond mean fitness: Demographic stochasticity and resilience matter at tree species climatic edges.” <em>Global Ecology and Biogeography</em> 32 (4): 573–85. <a href="https://doi.org/https://doi.org/10.1111/geb.13640">https://doi.org/https://doi.org/10.1111/geb.13640</a>.</p>
+         </div>
+         <div id="ref-Harwood2003">
+         <p>Harwood, John, and Kevin Stokes. 2003. “Coping with uncertainty in ecological advice: Lessons from fisheries.” <em>Trends in Ecology and Evolution</em> 18 (12): 617–22. <a href="https://doi.org/10.1016/j.tree.2003.08.001">https://doi.org/10.1016/j.tree.2003.08.001</a>.</p>
+         </div>
+         <div id="ref-Heffernan2014">
+         <p>Heffernan, James B, Patricia A Soranno, Michael J Angilletta, Lauren B Buckley, Daniel S Gruner, Tim H Keitt, James R Kellner, John S Kominoski, Adrian V Rocha, and Jingfeng Xiao. 2014. “Macrosystems ecology: understanding ecological patterns and processes at continental scales.” <em>Frontiers in Ecology and the Environment</em> 12 (1): 5–14.</p>
+         </div>
+         <div id="ref-holt2009">
+         <p>Holt, Robert D. 2009. “Bringing the Hutchinsonian niche into the 21st century: ecological and evolutionary perspectives.” <em>Proceedings of the National Academy of Sciences</em> 106 (supplement_2): 19659–65.</p>
+         </div>
+         <div id="ref-Holt2022">
+         <p>Holt, Robert D., Michael Barfield, and James H. Peniston. 2022. “Temporal variation may have diverse impacts on range limits.” <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em> 377 (1848). <a href="https://doi.org/10.1098/rstb.2021.0016">https://doi.org/10.1098/rstb.2021.0016</a>.</p>
+         </div>
+         <div id="ref-Holt2005">
+         <p>Holt, Robert D, Timothy H Keitt, Mark a Lewis, Brian a Maurer, and Mark L Taper. 2005. “Theoretical models of species’ borders: single species approaches.” <em>Schurr2012</em> 108 (1): 18–27. <a href="https://doi.org/10.1111/j.0030-1299.2005.13147.x">https://doi.org/10.1111/j.0030-1299.2005.13147.x</a>.</p>
+         </div>
+         <div id="ref-Hutchinson1957">
+         <p>Hutchinson, G Evelyn. 1957. “Concluding remarks.” In <em>Cold Spring Harbor Symposium on Quantitative Biology</em>, 22:415–27.</p>
+         </div>
+         <div id="ref-Kaber2021">
+         <p>Käber, Yannek, Peter Meyer, Jonas Stillhard, Emiel De Lombaerde, Jürgen Zell, Golo Stadelmann, Harald Bugmann, and Christof Bigler. 2021. “Tree recruitment is determined by stand structure and shade tolerance with uncertain role of climate and water relations.” <em>Ecology and Evolution</em> 11 (17): 12182–12203. <a href="https://doi.org/10.1002/ece3.7984">https://doi.org/10.1002/ece3.7984</a>.</p>
+         </div>
+         <div id="ref-Koons2009">
+         <p>Koons, David N, Samuel Pavard, Annette Baudisch, and C Jessica E. Metcalf. 2009. “Is life-history buffering or lability adaptive in stochastic environments?” <em>Oikos</em> 118 (7): 972–80. <a href="https://doi.org/https://doi.org/10.1111/j.1600-0706.2009.16399.x">https://doi.org/https://doi.org/10.1111/j.1600-0706.2009.16399.x</a>.</p>
+         </div>
+         <div id="ref-Kunstler2021">
+         <p>Kunstler, Georges, Arnaud Guyennon, Sophia Ratcliffe, Nadja Rüger, Paloma Ruiz-Benito, Dylan Z. Childs, Jonas Dahlgren, et al. 2021. “Demographic performance of European tree species at their hot and cold climatic edges.” <em>Journal of Ecology</em> 109 (2): 1041–54. <a href="https://doi.org/10.1111/1365-2745.13533">https://doi.org/10.1111/1365-2745.13533</a>.</p>
+         </div>
+         <div id="ref-leslie1945">
+         <p>Leslie, Patrick H. 1945. “On the use of matrices in certain population mathematics.” <em>Sankhyt</em> 33 (3): 183–212.</p>
+         </div>
+         <div id="ref-LeSquin2021">
+         <p>Le Squin, Amaël, Isabelle Boulangeat, and Dominique Gravel. 2021. “Climate-induced variation in the demography of 14 tree species is not sufficient to explain their distribution in eastern North America.” <em>Global Ecology and Biogeography</em> 30 (2): 352–69. <a href="https://doi.org/10.1111/geb.13209">https://doi.org/10.1111/geb.13209</a>.</p>
+         </div>
+         <div id="ref-Levins1969">
+         <p>Levins, Richard. 1969. “Some Demographic and Genetic Consequences of Environmental Heterogeneity for Biological Control.” <em>Bulletin of the Entomological Society of America</em> 15 (3): 237–40. <a href="https://doi.org/10.1093/besa/15.3.237">https://doi.org/10.1093/besa/15.3.237</a>.</p>
+         </div>
+         <div id="ref-Lewis1942">
+         <p>Lewis, E G. 1942. “On the generation and growth of a population.” <em>Sankhyã</em> 6: 93–96.</p>
+         </div>
+         <div id="ref-Louthan2015">
+         <p>Louthan, Allison M., Daniel F. Doak, and Amy L. Angert. 2015. “Where and When do Species Interactions Set Range Limits?” <em>Trends in Ecology and Evolution</em> 30 (12): 780–92. <a href="https://doi.org/10.1016/j.tree.2015.09.011">https://doi.org/10.1016/j.tree.2015.09.011</a>.</p>
+         </div>
+         <div id="ref-Lyu2022">
+         <p>Lyu, Shengman, and Jake M. Alexander. 2022. “Competition contributes to both warm and cool range edges.” <em>Nature Communications</em> 13 (1): 1–9. <a href="https://doi.org/10.1038/s41467-022-30013-3">https://doi.org/10.1038/s41467-022-30013-3</a>.</p>
+         </div>
+         <div id="ref-maguire1973niche">
+         <p>Maguire Jr, Bassett. 1973. “Niche response structure and the analytical potentials of its relationship to the habitat.” <em>The American Naturalist</em> 107 (954): 213–46.</p>
+         </div>
+         <div id="ref-May1978">
+         <p>May, Robert M, J R Beddington, J W Horwood, and J G Shepherd. 1978. “Exploiting natural populations in an uncertain world.” <em>Mathematical Biosciences</em> 42 (3-4): 219–52.</p>
+         </div>
+         <div id="ref-McGill2010">
+         <p>McGill, Brian J. 2010. “Matters of scale.” <em>Science</em> 328 (5978): 575–76. <a href="https://doi.org/10.1126/science.1188528">https://doi.org/10.1126/science.1188528</a>.</p>
+         </div>
+         <div id="ref-McGill2012">
+         <p>———. 2012. “Trees are rarely most abundant where they grow best.” <em>Journal of Plant Ecology</em> 5 (1): 46–51. <a href="https://doi.org/10.1093/jpe/rtr036">https://doi.org/10.1093/jpe/rtr036</a>.</p>
+         </div>
+         <div id="ref-Midolo2021">
+         <p>Midolo, Gabriele, Camilla Wellstein, and Søren Faurby. 2021. “Individual fitness is decoupled from coarse-scale probability of occurrence in North American trees.” <em>Ecography</em> 44 (5): 789–801. <a href="https://doi.org/https://doi.org/10.1111/ecog.05446">https://doi.org/https://doi.org/10.1111/ecog.05446</a>.</p>
+         </div>
+         <div id="ref-milles2023">
+         <p>Milles, Alexander, Thomas Banitz, Milos Bielcik, Karin Frank, Cara A Gallagher, Florian Jeltsch, Jane Uhd Jepsen, Daniel Oro, Viktoriia Radchuk, and Volker Grimm. 2023. “Local buffer mechanisms for population persistence.” <em>Trends in Ecology &amp; Evolution</em> 38 (13): 1051–9.</p>
+         </div>
+         <div id="ref-Naturelles2016">
+         <p>Ministere des Ressources Naturelles. 2016. “Norme d’inventaire ecoforestier: placettes-echantillons temporaires.” Direction des inventaires forestier, Ministère des Ressources naturelles,Québec.</p>
+         </div>
+         <div id="ref-Morin2007">
+         <p>Morin, Xavier, Carol Augspurger, and Isabelle Chuine. 2007. “Process-based modeling of species’ distributions: what limits temperate tree species’ range boundaries?” <em>Ecology</em> 88 (9): 2280–91. <a href="https://doi.org/10.1890/06-1591.1">https://doi.org/10.1890/06-1591.1</a>.</p>
+         </div>
+         <div id="ref-OConnell2007">
+         <p>O’Connell, M B, E B LaPoint, J A Turner, T Ridley, D Boyer, A Wilson, K L Waddell, and B L Conkling. 2007. “The forest inventory and analysis database: Database description and users forest inventory and analysis program.” US Department of Agriculture, Forest Service.</p>
+         </div>
+         <div id="ref-Paquette2021">
+         <p>Paquette, Alexandra, and Anna L Hargreaves. 2021. “Biotic interactions are more often important at species’ warm versus cool range edges.” <em>Ecology Letters</em> 24 (11): 2427–38. <a href="https://doi.org/https://doi.org/10.1111/ele.13864">https://doi.org/https://doi.org/10.1111/ele.13864</a>.</p>
+         </div>
+         <div id="ref-Pulliam2000">
+         <p>Pulliam, H. Ronald. 2000. “On the relationship between niche and distribution.” <em>Ecology Letters</em> 3 (4): 349–61. <a href="https://doi.org/10.1046/j.1461-0248.2000.00143.x">https://doi.org/10.1046/j.1461-0248.2000.00143.x</a>.</p>
+         </div>
+         <div id="ref-Purves2009">
+         <p>Purves, Drew W. 2009. “The demography of range boundaries versus range cores in eastern US tree species.” <em>Proceedings of the Royal Society B: Biological Sciences</em> 276 (1661): 1477–84. <a href="https://doi.org/10.1098/rspb.2008.1241">https://doi.org/10.1098/rspb.2008.1241</a>.</p>
+         </div>
+         <div id="ref-Scherrer2020">
+         <p>Scherrer, Daniel, Yann Vitasse, Antoine Guisan, Thomas Wohlgemuth, and Heike Lischke. 2020. “Competition and demography rather than dispersal limitation slow down upward shifts of trees’ upper elevation limits in the Alps.” <em>Journal of Ecology</em>, no. March: 1–15. <a href="https://doi.org/10.1111/1365-2745.13451">https://doi.org/10.1111/1365-2745.13451</a>.</p>
+         </div>
+         <div id="ref-Schreiber2009">
+         <p>Schreiber, Sebastian J., and James O. Lloyd-Smith. 2009. “Invasion dynamics in spatially heterogeneous environments.” <em>American Naturalist</em> 174 (4): 490–505. <a href="https://doi.org/10.1086/605405">https://doi.org/10.1086/605405</a>.</p>
+         </div>
+         <div id="ref-schultz2022">
+         <p>Schultz, Emily L, Lisa Hülsmann, Michiel D Pillet, Florian Hartig, David D Breshears, Sydne Record, John D Shaw, R Justin DeRose, Pieter A Zuidema, and Margaret E K Evans. 2022. “Climate-driven, but dynamic and complex? A reconciliation of competing hypotheses for species’ distributions.” <em>Ecology Letters</em> 25 (1): 38–51.</p>
+         </div>
+         <div id="ref-Shi2020">
+         <p>Shi, Hang, Quan Zhou, Fenglin Xie, Nianjun He, Rui He, Kerong Zhang, Quanfa Zhang, and Haishan Dang. 2020. “Disparity in elevational shifts of upper species limits in response to recent climate warming in the Qinling Mountains, North-central China.” <em>Science of the Total Environment</em> 706: 135718. <a href="https://doi.org/10.1016/j.scitotenv.2019.135718">https://doi.org/10.1016/j.scitotenv.2019.135718</a>.</p>
+         </div>
+         <div id="ref-Shoemaker2020">
+         <p>Shoemaker, Lauren G., Lauren L. Sullivan, Ian Donohue, Juliano S. Cabral, Ryan J. Williams, Margaret M. Mayfield, Jonathan M. Chase, et al. 2020. “Integrating the underlying structure of stochasticity into community ecology.” <em>Ecology</em> 101 (2): 1–15. <a href="https://doi.org/10.1002/ecy.2922">https://doi.org/10.1002/ecy.2922</a>.</p>
+         </div>
+         <div id="ref-Sittaro2017">
+         <p>Sittaro, Fabian, Alain Paquette, Christian Messier, and Charles A. Nock. 2017. “Tree range expansion in eastern North America fails to keep pace with climate warming at northern range limits.” <em>Global Change Biology</em>, 1–10. <a href="https://doi.org/10.1111/gcb.13622">https://doi.org/10.1111/gcb.13622</a>.</p>
+         </div>
+         <div id="ref-Soberon2007">
+         <p>Sober’on, Jorge. 2007. “Grinnellian and Eltonian niches and geographic distributions of species.” <em>Ecology Letters</em> 10 (12): 1115–23. <a href="https://doi.org/10.1111/j.1461-0248.2007.01107.x">https://doi.org/10.1111/j.1461-0248.2007.01107.x</a>.</p>
+         </div>
+         <div id="ref-Svenning2007">
+         <p>Svenning, Jens Christian, and Flemming Skov. 2007. “Could the tree diversity pattern in Europe be generated by postglacial dispersal limitation?” <em>Ecology Letters</em> 10 (6): 453–60. <a href="https://doi.org/10.1111/j.1461-0248.2007.01038.x">https://doi.org/10.1111/j.1461-0248.2007.01038.x</a>.</p>
+         </div>
+         <div id="ref-Talluto2017">
+         <p>Talluto, Matthew V., Isabelle Boulangeat, Steve Vissault, Wilfried Thuiller, and Dominique Gravel. 2017. “Extinction debt and colonization credit delay range shifts of eastern North American trees.” <em>Nature Ecology &amp; Evolution</em> 1 (June): 0182. <a href="https://doi.org/10.1038/s41559-017-0182">https://doi.org/10.1038/s41559-017-0182</a>.</p>
+         </div>
+         <div id="ref-stan2022stan">
+         <p>Team, Stan Development, and Others. 2022. “Stan modeling language users guide and reference manual, version 2.30.1.” Stan Development Team.</p>
+         </div>
+         <div id="ref-Terry2022">
+         <p>Terry, J Christopher D, Jacob D O’Sullivan, and Axel G Rossberg. 2022. “Synthesising the multiple impacts of climatic variability on community responses to climate change.” <em>Ecography</em> 2022 (5): e06123.</p>
+         </div>
+         <div id="ref-Thuiller2014">
+         <p>Thuiller, Wilfried, Tamara Munkemuller, Katja H Schiffers, Damien Georges, Stefan Dullinger, Vincent M Eckhart, Thomas C Edwards, et al. 2014. “Does probability of occurrence relate to population dynamics?” <em>Ecography</em> 37 (12): 1155–66. <a href="https://doi.org/10.1111/ecog.00836">https://doi.org/10.1111/ecog.00836</a>.</p>
+         </div>
+         <div id="ref-van2020">
+         <p>van Daalen, Silke, and Hal Caswell. 2020. “Variance as a life history outcome: Sensitivity analysis of the contributions of stochasticity and heterogeneity.” <em>Ecological Modelling</em> 417 (108856).</p>
+         </div>
+         <div id="ref-Zhang2015">
+         <p>Zhang, Jian, Shongming Huang, and Fangliang He. 2015. “Half-century evidence from western Canada shows forest dynamics are primarily driven by competition followed by climate.” <em>Proceedings of the National Academy of Sciences</em> 112 (13): 4009–14. <a href="https://doi.org/10.1073/pnas.1420844112">https://doi.org/10.1073/pnas.1420844112</a>.</p>
+         </div>
+         </div>
+      </article>
+
+      <button onclick="topFunction(300)" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+
+      <d-appendix>
+         <sections class="container">
+                        <div class="row">
+               <div class="leftColumn">
+                  <p>Supporting information</p>
+               </div>
+               <div class="rightColumn">
+                  <p>Additional supporting information can be found <a href="https://willvieira.github.io/ms_forest-suitable-probability/suppInfo.html">here</a>.</p>
+               </div>
+            </div>
+                                    <div class="row">
+               <div class="leftColumn"> 
+                  <p>Acknowledgments</p>
+               </div>
+               <div class="rightColumn">
+                  <p>We thank nice people</p>
+               </div>
+            </div>
+                                    <div class="row">
+               <div class="leftColumn">
+                  <p>Data availability</p>
+               </div>
+               <div class="rightColumn">
+                  <p>All the code and data used to reproduce the analysis, figure and manuscript are stored as a research compendium at <a href="https://github.com/willvieira/ms_forest-suitable-probability">https://github.com/willvieira/ms_forest-suitable-probability</a>).</p>
+               </div>
+            </div>
+                                    <div class="row">
+               <div class="leftColumn">
+                  <p>Funding</p>
+               </div>
+               <div class="rightColumn">
+                  <p>This research was supported by the BIOS² NSERC CREATE program.</p>
+               </div>
+            </div>
+                                                <div class="row">
+               <div class="leftColumn">
+                  <p>Conflicts of interest</p>
+               </div>
+               <div class="rightColumn">
+                  <p>The authors declare no conflict of interest.</p>
+               </div>
+            </div>
+                        <div class="row">
+               <div class="leftColumn">
+                  <p>References</p>
+               </div>
+                  <div class="rightColumn", id = 'newrefs'>
+               </div>
+            </div>
+         </sections>
+      </d-appendix>
+
+      <svg class="arrowTop" id="arrowTop" xmlns="http://www.w3.org/2000/svg" width="98" height="80"><g fill="none" stroke="#00667F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><path d="M2.012 47.458c2.254-15.748 7.447-21.81 23.566-21.434 22.829.533 36.483-4.221 53.935-19.566"/><path d="M80.435 14.297c-.592-4.348 2.294-7.566 2.554-11.755-2.997 1.132-9.175 3.154-12.46 2.399"/></g></svg>
+      
+      </div>
+      <div class="footer">
+         <p><a onMouseOver="this.style.color='#00667F'"onMouseOut="this.style.color='grey'" style='color:grey' href="https://github.com/willvieira/ms_forest-suitable-probability/issues" target="_blank"><i class="fas fa-exclamation-circle"></i> Report issues</a></p>
+         <p><a onMouseOver="this.style.color='#00667F'"onMouseOut="this.style.color='grey'" style='color:grey' href="https://twitter.com/intent/tweet?text=Unifying individual and metapopulation scales with stochastic population models: the effect of climate and competition on tree range limits%20https://github.com/willvieira/ms_forest-suitable-probability"" target="_blank"><i class="fab fa-twitter"></i> Tweet this page</a></p>
+         <p><a onMouseOver="this.style.color='#00667F'"onMouseOut="this.style.color='grey'" style='color:grey' href="javascript:void(0)" onclick="openAnnotate()"><i class="fas fa-comments"></i> Leave a comment</a></p>
+      </div>
+
+   </body>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+   <script type="text/javascript">
+      // Remove References h1
+      document.getElementById("references").remove();
+      // Move the references from body to appendix
+      var theNewRefs = document.getElementById("newrefs");
+      var theRefs = document.getElementById("refs");
+      theNewRefs.appendChild(theRefs);
+   </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   <script>
+      document.querySelectorAll('[role="doc-biblioref"]').forEach(function (el){
+
+         // get info from reference (to be used in tittle of hover)
+         var refID = el.href.replace(/.*#ref-/, '');
+         var ref = document.getElementById('ref-'.concat(refID));
+         // Title
+         if(/“(.*?)”/g.test(ref.textContent)) {
+            var title = ref.textContent.match(/“(.*?)”/g)[0];
+            title = title.replace(/“/, '').replace(/”/, '').replace(/\./, '');
+         } else {
+            var title = ref.querySelector('em').textContent;
+            var journal = '';
+         }
+         // Journal
+         if(typeof journal == "undefined" & ref.querySelector('em') != null) {
+            var journal = ref.querySelector('em').textContent;
+         }
+         // DOI
+         if(ref.querySelector('a') != null) {
+            var DOI = ref.querySelector('a').textContent;
+            title = "<a href='" + DOI + "' target='_blank';>" + title + "</a>"
+         }
+         // Year
+         uglyYear = ref.textContent.match(/\. \d{4}\./g)[0];
+         var year = uglyYear.replace(/\. /, '').replace(/\./, '');
+         // Authors
+         var re = new RegExp ('(.*?)' + uglyYear, 'g');
+         var authors = ref.textContent.match(re)[0].replace(uglyYear, '').replace(/\s\s+/g, '');
+
+         // Create reference "title" content
+         var refTitle = "<b>" + title + "</b><br>" + authors + "<br>" +
+                        (journal == "" ? "" : journal + ", " ) +
+                        year;
+
+         // add "Tooltips" attributes to the link tag
+         el.setAttribute("data-toggle", "tooltip");
+         el.setAttribute("data-html", "true");
+         el.setAttribute("data-placement", "bottom");
+         el.setAttribute("title", refTitle);
+
+         // remove link href to references
+         el.removeAttribute("href");
+      });
+   </script>
+   <script>
+      $(function () {
+         $('[data-toggle="tooltip"]').tooltip({delay: {show: 300, hide: 500}})
+      })
+   </script>
+   <script>
+      $(window).scroll(function() {
+         if ($(this).scrollTop()>300)
+         {
+            $('.footer').show(1000);
+         }
+         else
+         {
+            $('.footer').hide(1000);
+         }
+      });
+   </script>
+   <script>
+      //Get the button: (and the footer too)
+      mybutton = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+         if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            mybutton.style.display = "block";
+         } else {
+            mybutton.style.display = "none";
+         }
+      }
+
+      function topFunction (duration) {
+         // cancel if already on top
+         if (document.scrollingElement.scrollTop === 0) return;
+
+         const totalScrollDistance = document.scrollingElement.scrollTop;
+         let scrollY = totalScrollDistance, oldTimestamp = null;
+
+         function step (newTimestamp) {
+            if (oldTimestamp !== null) {
+                  // if duration is 0 scrollY will be -Infinity
+                  scrollY -= totalScrollDistance * (newTimestamp - oldTimestamp) / duration;
+                  if (scrollY <= 0) return document.scrollingElement.scrollTop = 0;
+                  document.scrollingElement.scrollTop = scrollY;
+            }
+            oldTimestamp = newTimestamp;
+            window.requestAnimationFrame(step);
+         }
+         window.requestAnimationFrame(step);
+      };
+   </script>
+   <script>
+      // animation of top arrow
+      var svg = new Walkway({
+         selector: '#arrowTop',
+         duration: '500',
+         // can pass in a function or a string like 'easeOutQuint'
+         easing: function (t) {
+            return t * t;
+         }
+      });
+   </script>
+   <script>
+         function openAnnotate() {
+            // Sleeping function
+            var delay = ( function() {
+               var timer = 0;
+               return function(callback, ms) {
+                  clearTimeout (timer);
+                  timer = setTimeout(callback, ms);
+               };
+            })();
+
+            // first change display of arrow to block (none by defaut)
+            var arrow = document.getElementById("arrowTop");
+            arrow.style.display = "block";
+
+            // create animation
+            svg.draw();
+
+            // wait 2 secs until remove arrow
+            delay(function(){
+               arrow.style.display = "none";
+            }, 2000 );
+         }
+   </script>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+   <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', '');
+   </script>
+</html>
